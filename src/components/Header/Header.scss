@@ -1,0 +1,20 @@
+.header {
+  min-height: 100vh;
+  background: url("../../media/img/bmw-x3_x4_pageteaser_890.jpg") center center/cover no-repeat;
+  padding: 10px 0 52px 0;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    margin-top: 4px;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+  }
+}

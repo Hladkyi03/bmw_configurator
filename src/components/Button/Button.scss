@@ -1,0 +1,22 @@
+.button {
+  margin-inline: auto;
+  width: 100%;
+  border: 1px solid #fcf0f0;
+  border-radius: 5px;
+  color: #f2f2f2;
+  font-size: 16px;
+  font-weight: 700;
+  background: transparent;
+  height: 52px;
+
+  &--margin-top-16 {
+    margin-top: 16px;
+  }
+
+  &__link {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
