@@ -1,17 +1,71 @@
 .header {
-  min-height: 100vh;
-  background: url("../../media/img/bmw-x3_x4_pageteaser_890.jpg") center center/cover no-repeat;
-  padding: 10px 0 52px 0;
+  padding-top: 10px;
+  position: relative;
+
+  &__background {
+    background: url("https://bmw.scene7.com/is/image/BMW/hometeaser_2024_x3_x4_offer:1to1?fmt=jpg&wid=600&hei=600") center center/cover no-repeat;
+    position: absolute;
+    height: 100vw;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__topbar-right-wrapper {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  &__burger-line {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+  }
+
+  &__burger-menu {
+    width: 24px;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__bottom-wrapper {
+    background: linear-gradient(180deg,#0000,#000 8pc);
+    padding-top: 48px;
+    padding-bottom: 52px;
+    padding-inline: 24px;
+    text-align: center;
+  }
 
   &__title {
     font-size: 32px;
     font-weight: 300;
     color: rgb(255, 255, 255);
     text-transform: uppercase;
+    text-align: center;
   }
 
   &__subtitle {
-    margin-top: 4px;
+    margin-top: 10px;
     font-size: 16px;
     font-weight: 300;
     text-transform: uppercase;
