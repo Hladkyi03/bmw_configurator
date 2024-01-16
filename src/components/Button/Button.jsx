@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import "./Button.scss";
 
-export const Button = ({ color, text, url }) => {
+export const Button = ({ color, text, url, modificators }) => {
   return (
-    <button className={cn("button", {
+    <button className={cn("button", modificators, {
       "button--white": color === "white",
       "button--black": color === "black",
     })}>

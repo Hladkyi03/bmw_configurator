@@ -1,0 +1,17 @@
+.choose-your-car {
+  padding: 26px 0;
+
+  &__title {
+    color: rgb(38, 38, 38);
+    font-size: 10px;
+    font-weight: 300;
+    margin-left: 10%;
+  }
+
+  &__link {
+    padding: 12px 0;
+    width: 30%;
+    display: block;
+    margin-left: 10%;
+  }
+}

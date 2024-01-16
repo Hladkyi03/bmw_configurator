@@ -1,16 +1,38 @@
 .button {
   margin-inline: auto;
   width: 100%;
-  border: 1px solid #fcf0f0;
   border-radius: 5px;
   color: #f2f2f2;
   font-size: 16px;
   font-weight: 700;
   background: transparent;
   height: 52px;
+  cursor: pointer;
+
+  &--white {
+    border: 1.5px solid #f2f2f2;
+    color: #f2f2f2;
+  }
+
+  &--black {
+    border: 1.5px solid #262626;
+    color: #262626;
+  }
 
   &--margin-top-16 {
     margin-top: 16px;
+  }
+
+  &--margin-top-32 {
+    margin-top: 32px;
+  }
+
+  &--margin-top-28 {
+    margin-top: 28px;
+  }
+
+  &--margin-top-24 {
+    margin-top: 24px;
   }
 
   &__link {

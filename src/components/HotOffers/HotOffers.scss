@@ -1,0 +1,48 @@
+.hot-offers {
+  padding: 30px 0 5px;
+  border-bottom: 1px solid rgba($color: gray, $alpha: 0.5);
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  &__offer-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &__offer-title {
+    margin-top: 40px;
+    color: rgb(102, 102, 102);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+
+  &__offer-subtitle {
+    margin-top: 8px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 300;
+    color: rgb(38, 38, 38);
+    text-transform: uppercase;
+  }
+
+  &__offer-info {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(38, 38, 38);
+    line-height: 24px;
+  }
+
+  &__addictional-info {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 16px;
+    color: rgb(38, 38, 38);
+  }
+}

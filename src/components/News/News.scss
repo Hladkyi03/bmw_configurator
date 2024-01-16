@@ -1,0 +1,59 @@
+.news {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+
+  &__block-background {
+    position: absolute;
+    height: 100vw;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+
+    &--charity-bg {
+      background: url("https://bmw.scene7.com/is/image/BMW/United-24-dam-2:1to1?fmt=jpg&wid=600&hei=600") center center/cover no-repeat;
+    }
+
+    &--new-car-bg {
+      background: url("https://bmw.scene7.com/is/image/BMW/bmw_neue-klasse_home-stage_teaser:1to1?fmt=jpg&wid=600&hei=600") center center/cover no-repeat;
+    }
+  }
+
+  &__block {
+    position: relative;
+  }
+
+  &__block-bottom-wrapper {
+    background: linear-gradient(180deg, #0000, #000 8pc);
+    padding-top: 48px;
+    padding-bottom: 52px;
+    padding-inline: 24px;
+    text-align: center;
+    margin-top: calc(100vw / 1.8);
+  }
+
+  &__block-title {
+    font-size: 32px;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    text-align: center;
+
+    &--text-transform-none {
+      text-transform: none;
+    }
+  }
+
+  &__block-subtitle {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+
+    &--text-transform-none {
+      text-transform: none;
+    }
+  }
+}
