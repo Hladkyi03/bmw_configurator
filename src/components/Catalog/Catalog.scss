@@ -1,0 +1,18 @@
+.catalog {
+  &__serie {
+    padding: 40px 0 60px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  &__serie-title {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(38, 38, 38);
+  }
+
+  &__models-wrapper {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

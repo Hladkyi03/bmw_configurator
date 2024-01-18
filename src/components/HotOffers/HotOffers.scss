@@ -19,9 +19,13 @@
   }
 
   &__offer-image {
-    width: 43vw;
-    height: 90%;
+    width: 100%;
     max-width: 100%;
+
+    @include onDesktop {
+      width: 43vw;
+      height: 90%;
+    }
   }
 
   &__offer-title {

@@ -1,0 +1,57 @@
+.car-card {
+  width: 25%;
+
+  &__image-wrapper {
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 100%;
+    height: 50%;
+  }
+
+  &__mpower-icon {
+    position: absolute;
+    width: 15%;
+    height: auto;
+    left: 0;
+    bottom: 5px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 400;
+    color: #262626;
+  }
+
+  &__list {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__list-item {
+    color: rgb(77, 77, 77);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+
+    &:not(:first-of-type) {
+      &::before {
+        content: "";
+        display: block;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: #c6c4c4;
+        position: absolute;
+        top: 50%;
+        left: -12px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

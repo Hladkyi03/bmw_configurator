@@ -1,15 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "../Button/Button";
 import "./Header.scss";
 import logo from "../../media/icons/bmw-logo.svg";
+import logoWhite from "../../media/icons/logo-white.svg";
 import { SideMenu } from "../SideMenu/SideMenu";
 import { useState } from "react";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { Nav } from "../Nav/Nav";
+import cn from "classnames";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const location = useLocation();
+
+  const isHomePage = location.pathname === "/home";
 
   const handleMenuOpen = () => {
     setIsMenuOpen(true);
@@ -19,17 +25,30 @@ export const Header = () => {
   const isLarge = useMediaQuery("(min-width: 1024px)");
 
   return (
-    <header className="header">
+    <header
+      className={cn("header", {
+        "header--small": !isHomePage,
+        "header--min-height-100vh": isMenuOpen,
+      })}
+    >
       {!isLarge && <SideMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />}
 
-      <div className="header__background"></div>
+      {isHomePage && <div className="header__background"></div>}
 
       <div className="header__wrapper">
         <div className="container">
-          <div className="header__topbar">
+          <div
+            className={cn("header__topbar", {
+              "header__topbar--small": !isHomePage,
+            })}
+          >
             <div className="header__left-wrapper">
               <Link className="header__topbar-link" to="/home">
-                <img src={logo} alt="logo" className="header__logo" />
+                <img
+                  src={isHomePage ? logo : logoWhite}
+                  alt="logo"
+                  className="header__logo"
+                />
               </Link>
 
               {isLarge && <Nav />}
@@ -43,7 +62,7 @@ export const Header = () => {
                 width="20"
                 height="20"
                 viewBox="0 0 50 50"
-                fill="#FFFFFF"
+                fill={isHomePage ? "#FFFFFF": "rgb(102, 102, 102)"}
               >
                 <path
                   d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438
@@ -60,9 +79,21 @@ export const Header = () => {
               {!isLarge && (
                 <button className="header__burger-btn" onClick={handleMenuOpen}>
                   <div className="header__burger-menu">
-                    <span className="header__burger-line"></span>
-                    <span className="header__burger-line"></span>
-                    <span className="header__burger-line"></span>
+                    <span
+                      className={cn("header__burger-line", {
+                        "header__burger-line--black": !isHomePage,
+                      })}
+                    ></span>
+                    <span
+                      className={cn("header__burger-line", {
+                        "header__burger-line--black": !isHomePage,
+                      })}
+                    ></span>
+                    <span
+                      className={cn("header__burger-line", {
+                        "header__burger-line--black": !isHomePage,
+                      })}
+                    ></span>
                   </div>
                 </button>
               )}
@@ -70,22 +101,24 @@ export const Header = () => {
           </div>
         </div>
 
-        <div className="header__bottom-wrapper">
-          <h1 className="header__title">
-            BMW X3 and BMW X4: Versatility and Style.
-          </h1>
+        {isHomePage && (
+          <div className="header__bottom-wrapper">
+            <h1 className="header__title">
+              BMW X3 and BMW X4: Versatility and Style.
+            </h1>
 
-          <p className="header__subtitle">
-            Special Offer on In-Stock Vehicles.
-          </p>
+            <p className="header__subtitle">
+              Special Offer on In-Stock Vehicles.
+            </p>
 
-          <Button
-            color="white"
-            text="Learn more"
-            url="/home"
-            modificators={"button--margin-top-16 button--tablet-medium-sized"}
-          />
-        </div>
+            <Button
+              color="white"
+              text="Learn more"
+              url="/home"
+              modificators={"button--margin-top-16 button--tablet-medium-sized"}
+            />
+          </div>
+        )}
       </div>
     </header>
   );
