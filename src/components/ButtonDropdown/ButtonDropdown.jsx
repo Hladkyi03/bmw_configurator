@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import "./ButtonDropdown.scss";
 
 export const ButtonDropdown = ({ title, listItems }) => {
@@ -9,9 +10,15 @@ export const ButtonDropdown = ({ title, listItems }) => {
     setIsListOpened((prev) => !prev);
   };
 
+  const isLarge = useMediaQuery("(min-width: 768px)");
+
   return (
     <div className="footer__button-wrapper">
-      <button className="footer__button" onClick={handleOnClick}>
+      <button
+      className="footer__button"
+      onClick={handleOnClick}
+      disabled={isLarge}
+      >
         {title}
         <img
           src="https://cdn-icons-png.flaticon.com/512/54/54785.png"
@@ -20,7 +27,7 @@ export const ButtonDropdown = ({ title, listItems }) => {
         />
       </button>
 
-      {isListOpen && (
+      {isLarge ? (
         <ul className="footer__dropdown-list">
           {listItems.map((item) => (
             <li className="footer__dropdown-item" key={item.url}>
@@ -30,7 +37,17 @@ export const ButtonDropdown = ({ title, listItems }) => {
             </li>
           ))}
         </ul>
-      )}
+      ) : (isListOpen && (
+        <ul className="footer__dropdown-list">
+          {listItems.map((item) => (
+            <li className="footer__dropdown-item" key={item.url}>
+              <Link to={item.url} className="footer__dropdown-link">
+                {item.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      ))}
     </div>
   );
 };

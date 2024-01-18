@@ -15,25 +15,27 @@ export const HotOffers = () => (
             className="hot-offers__offer-image"
           />
 
-          <h4 className="hot-offers__offer-title">
-            UP TO -20% DISCOUNT ON AUTOMOBILE PRODUCTS.
-          </h4>
+          <div className="hot-offers__bottom-wrapper">
+            <h4 className="hot-offers__offer-title">
+              UP TO -20% DISCOUNT ON AUTOMOBILE PRODUCTS.
+            </h4>
 
-          <p className="hot-offers__offer-subtitle">
-            Catch the winter vibes with BMW.
-          </p>
+            <p className="hot-offers__offer-subtitle">
+              Catch the winter vibes with BMW.
+            </p>
 
-          <p className="hot-offers__offer-info">
-            Special offer valid when purchasing from the official online store
-            and at BMW dealerships.*
-          </p>
+            <p className="hot-offers__offer-info">
+              Special offer valid when purchasing from the official online store
+              and at BMW dealerships.*
+            </p>
 
-          <Button
-            color="black"
-            text="Online store"
-            url="/home"
-            modificators={"button--margin-top-24"}
-          />
+            <Button
+              color="black"
+              text="Online store"
+              url="/home"
+              modificators={"button--margin-top-24 button--tablet-medium"}
+            />
+          </div>
         </div>
 
         <div className="hot-offers__offer">
@@ -42,24 +44,25 @@ export const HotOffers = () => (
             alt="winter-cars"
             className="hot-offers__offer-image"
           />
+          <div className="hot-offers__bottom-wrapper">
+            <h4 className="hot-offers__offer-title">TRADE-IN</h4>
 
-          <h4 className="hot-offers__offer-title">TRADE-IN</h4>
+            <p className="hot-offers__offer-subtitle">
+              Online vehicle appraisal and buyback.
+            </p>
 
-          <p className="hot-offers__offer-subtitle">
-            Online vehicle appraisal and buyback.
-          </p>
+            <p className="hot-offers__offer-info">
+              In just a few clicks, you can directly find out the residual value
+              of your car.
+            </p>
 
-          <p className="hot-offers__offer-info">
-            In just a few clicks, you can directly find out the residual value
-            of your car.
-          </p>
-
-          <Button
-            color="black"
-            text="Calculate the cost."
-            url="/home"
-            modificators={"button--margin-top-24"}
-          />
+            <Button
+              color="black"
+              text="Calculate the cost."
+              url="/home"
+              modificators={"button--margin-top-24 button--tablet-medium"}
+            />
+          </div>
         </div>
 
         <p className="hot-offers__addictional-info">

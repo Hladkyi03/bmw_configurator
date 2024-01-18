@@ -55,38 +55,43 @@ export const Footer = () => {
         </div>
       </div>
 
-      <p className="footer__copyright">© BMW AG 2023</p>
+      <div className="container container--on-tablet-padding-inline-36">
+        <div className="footer__rights">
+          <p className="footer__copyright">© BMW AG 2023</p>
 
-      <ul className="footer__bottom-list">
-        <li className="footer__bottom-list-item">
-          <Link
-            // eslint-disable-next-line max-len
-            to="https://www.bmw.ua/uk/footer/metanavigation/legal-disclaimer-pool/legal-disclaimer.html"
-            className="footer__bottom-list-link"
-          >
-            Legal disclaimer
-          </Link>
-        </li>
+          <ul className="footer__bottom-list">
+            <li className="footer__bottom-list-item">
+              <Link
+                // eslint-disable-next-line max-len
+                to="https://www.bmw.ua/uk/footer/metanavigation/legal-disclaimer-pool/legal-disclaimer.html"
+                className="footer__bottom-list-link"
+              >
+                Legal disclaimer
+              </Link>
+            </li>
 
-        <li className="footer__bottom-list-item">
-          <Link
-            // eslint-disable-next-line max-len
-            to="https://www.bmw.ua/uk/footer/metanavigation/legal-notice-pool/imprint.html"
-            className="footer__bottom-list-link"
-          >
-            Source data
-          </Link>
-        </li>
+            <li className="footer__bottom-list-item">
+              <Link
+                // eslint-disable-next-line max-len
+                to="https://www.bmw.ua/uk/footer/metanavigation/legal-notice-pool/imprint.html"
+                className="footer__bottom-list-link"
+              >
+                Source data
+              </Link>
+            </li>
 
-        <li className="footer__bottom-list-item">
-          <Link
-            to="https://www.bmw.ua/uk/footer/footer-section/cookie-policy.html"
-            className="footer__bottom-list-link"
-          >
-            Cookie files
-          </Link>
-        </li>
-      </ul>
+            <li className="footer__bottom-list-item">
+              <Link
+                // eslint-disable-next-line max-len
+                to="https://www.bmw.ua/uk/footer/footer-section/cookie-policy.html"
+                className="footer__bottom-list-link"
+              >
+                Cookie files
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </footer>
   );
 };

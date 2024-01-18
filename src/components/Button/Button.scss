@@ -1,4 +1,7 @@
+@import "../../cssTools/mixins.scss";
+
 .button {
+  display: block;
   margin-inline: auto;
   width: 100%;
   border-radius: 5px;
@@ -33,6 +36,51 @@
 
   &--margin-top-24 {
     margin-top: 24px;
+  }
+
+  &--tablet-small {
+    @include onTablet {
+      width: 180px;
+      margin-inline: auto;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+
+  &--tablet-medium-sized {
+    @include onTablet {
+      width: 250px;
+      margin-inline: auto;
+    }
+
+    @include onDesktop {
+      width: 180px;
+      margin-inline: 0;
+    }
+  }
+
+  &--tablet-medium {
+    @include onTablet {
+      width: 400px;
+      margin-inline: 0;
+    }
+
+    @include onDesktop {
+      width: 250px;
+    }
+  }
+
+  &--tablet-large {
+    @include onTablet {
+      width: 75%;
+    }
+
+    @include onDesktop {
+      width: 300px;
+      margin-inline: 0;
+    }
   }
 
   &__link {

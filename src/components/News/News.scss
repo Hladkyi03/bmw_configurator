@@ -1,8 +1,18 @@
+@import "../../cssTools/mixins.scss";
+
 .news {
   display: flex;
   flex-direction: column;
   gap: 30px;
   position: relative;
+
+  &__block {
+    @include onDesktop {
+      height: 70vh;
+      display: flex;
+      align-items: end;
+    }
+  }
 
   &__block-background {
     position: absolute;
@@ -13,10 +23,28 @@
 
     &--charity-bg {
       background: url("https://bmw.scene7.com/is/image/BMW/United-24-dam-2:1to1?fmt=jpg&wid=600&hei=600") center center/cover no-repeat;
+
+      @include onTablet {
+        background-image: url("https://bmw.scene7.com/is/image/BMW/United-24-dam-2:1to1?fmt=jpg&wid=1024&hei=1024");
+      }
+
+      @include onDesktop {
+        background-image: url("https://bmw.scene7.com/is/image/BMW/United-24-dam-2:3to1?fmt=webp&wid=1504&hei=501");
+        height: 70vh;
+      }
     }
 
     &--new-car-bg {
       background: url("https://bmw.scene7.com/is/image/BMW/bmw_neue-klasse_home-stage_teaser:1to1?fmt=jpg&wid=600&hei=600") center center/cover no-repeat;
+
+      @include onTablet {
+        background-image: url("https://bmw.scene7.com/is/image/BMW/bmw_neue-klasse_home-stage_teaser:1to1?fmt=jpg&wid=1024&hei=1024");
+      }
+
+      @include onDesktop {
+        background-image: url("https://bmw.scene7.com/is/image/BMW/bmw_neue-klasse_home-stage_teaser:3to1?fmt=jpg&wid=1504&hei=501");
+        height: 70vh;
+      }
     }
   }
 
@@ -31,10 +59,28 @@
     padding-inline: 24px;
     text-align: center;
     margin-top: calc(100vw / 1.8);
+
+    @media (min-width: 520px) {
+      margin-top: calc(100vw / 1.4);
+    }
+
+    @include onTablet {
+      padding-inline: 36px;
+      margin-inline: 0;
+      margin-top: calc(100vw / 1.2);
+    }
+
+    @include onDesktop {
+      padding-inline: 60px;
+      margin-top: 0;
+      width: 100%;
+      text-align: left;
+      padding-bottom: 20px;
+    }
   }
 
   &__block-title {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 300;
     color: rgb(255, 255, 255);
     text-transform: uppercase;
@@ -42,6 +88,11 @@
 
     &--text-transform-none {
       text-transform: none;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      max-width: 40vw;
     }
   }
 

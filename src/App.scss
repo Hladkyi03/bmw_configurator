@@ -1,3 +1,5 @@
+@import './cssTools/mixins.scss';
+
 * {
   box-sizing: border-box;
 }
@@ -19,5 +21,27 @@ h1 {
 
   &--padding-inline-0 {
     padding-inline: 0;
+  }
+
+  @include onTablet {
+    padding-inline: 60px;
+    margin-inline: 0;
+  }
+
+  &--on-tablet-padding-inline-36 {
+    @include onTablet {
+      padding-inline: 36px;
+      margin-inline: 0;
+    }
+
+    @include onDesktop {
+      padding-inline: 60px;
+    }
+  }
+
+  &--desktop-padding-0 {
+    @include onDesktop {
+      padding-inline: 0;
+    }
   }
 }

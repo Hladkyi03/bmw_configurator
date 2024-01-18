@@ -1,10 +1,12 @@
+@import "../../cssTools/mixins.scss";
+
 .footer {
   padding: 0 0 20px;
 
   &__content-wrapper {
-    padding-top: 48px;
+    padding-top: 60px;
     background-color: #f6f6f6;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
   }
 
   &__buttons-container {
@@ -13,6 +15,17 @@
     gap: 24px;
     margin-left: 10%;
     margin-right: 10%;
+
+    @include onTablet {
+      flex-direction: row;
+      margin-inline: 0;
+    }
+  }
+
+  &__button-wrapper {
+    @include onTablet {
+      width: 100%;
+    }
   }
 
   &__button {
@@ -25,11 +38,21 @@
     font-weight: 700;
     padding: 5px 0;
     cursor: pointer;
+
+    @include onTablet {
+      color: rgb(77, 77, 77);
+      font-size: 14px;
+      font-weight: 300;
+    }
   }
 
   &__button-icon {
     width: 16px;
     height: 16px;
+
+    @include onTablet {
+      display: none;
+    }
   }
 
   &__dropdown-list {
@@ -39,6 +62,11 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
+
+    @include onTablet {
+      gap: 20px;
+      padding-left: 0;
+    }
   }
 
   &__dropdown-link {
@@ -53,6 +81,10 @@
     margin-right: 10%;
     display: flex;
     gap: 10px;
+
+    @include onTablet {
+      margin-left: 0;
+    }
   }
 
   &__social-link {
@@ -65,8 +97,21 @@
     max-width: 100%;
   }
 
-  &__copyright {
+  &__rights {
     margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include onTablet {
+      gap: 0;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__copyright {
     color: rgb(38, 38, 38);
     font-size: 12px;
     font-weight: 300;
@@ -74,7 +119,6 @@
   }
 
   &__bottom-list {
-    margin-top: 32px;
     display: flex;
     gap: 15px;
     align-items: center;

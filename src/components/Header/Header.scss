@@ -1,6 +1,13 @@
+@import "../../cssTools/mixins.scss";
+
 .header {
-  padding-top: 10px;
+  padding-top: 20px;
   position: relative;
+  overflow: hidden;
+
+  @include onDesktop {
+    height: 95vh;
+  }
 
   &__background {
     background: url("https://bmw.scene7.com/is/image/BMW/hometeaser_2024_x3_x4_offer:1to1?fmt=jpg&wid=600&hei=600") center center/cover no-repeat;
@@ -9,6 +16,15 @@
     width: 100%;
     z-index: -1;
     top: 0;
+
+    @include onTablet {
+      background-image: url("https://bmw.scene7.com/is/image/BMW/hometeaser_2024_x3_x4_offer:1to1?fmt=jpg&wid=1024&hei=1024");
+    }
+
+    @include onDesktop {
+      background-image: url("https://bmw.scene7.com/is/image/BMW/hometeaser_2024_x3_x4_offer:16to7?fmt=jpg&wid=1504&hei=658");
+      height: 95vh;
+    }
   }
 
   &__wrapper {
@@ -22,6 +38,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 20px;
+
+    @include onDesktop {
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  &__left-wrapper {
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
   }
 
   &__topbar-right-wrapper {
@@ -29,9 +58,30 @@
     gap: 30px;
   }
 
+  &__topbar-link {
+    width: 36px;
+    height: 36px;
+
+    @include onDesktop {
+      display: block;
+      width: 52px;
+      height: 52px;
+    }
+  }
+
   &__logo {
     width: 36px;
     height: 36px;
+
+    @include onDesktop {
+      width: 52px;
+      height: 52px;
+    }
+  }
+
+  &__burger-btn {
+    background: transparent;
+    cursor: pointer;
   }
 
   &__burger-line {
@@ -49,12 +99,28 @@
   }
 
   &__bottom-wrapper {
-    background: linear-gradient(180deg,#0000,#000 8pc);
+    background: linear-gradient(180deg, #0000, #000 8pc);
     padding-top: 48px;
     padding-bottom: 52px;
     padding-inline: 24px;
     text-align: center;
     margin-top: calc(100vw / 2.2);
+
+    @media (min-width: 520px) {
+      margin-top: calc(100vw / 1.6);
+    }
+
+    @include onTablet {
+      padding-inline: 60px;
+      margin-inline: 0;
+      margin-top: calc(100vw / 1.3);
+    }
+
+    @include onDesktop {
+      background: transparent;
+      margin-top: 0;
+      max-width: 60vw;
+    }
   }
 
   &__title {
@@ -63,6 +129,11 @@
     color: rgb(255, 255, 255);
     text-transform: uppercase;
     text-align: center;
+
+    @include onDesktop {
+      text-align: left;
+      font-size: 40px;
+    }
   }
 
   &__subtitle {
@@ -71,5 +142,10 @@
     font-weight: 300;
     text-transform: uppercase;
     color: rgb(255, 255, 255);
+
+    @include onDesktop {
+      text-align: left;
+      font-size: 20px;
+    }
   }
 }

@@ -1,0 +1,66 @@
+@import "../../cssTools/mixins.scss";
+
+.sidemenu {
+  position: absolute;
+  right: -100%;
+  top: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: #fff;
+  padding-top: 20px;
+  transition: right 0.3s ease;
+
+  &--active {
+    right: 0;
+  }
+
+  &__topbar {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    padding-bottom: 20px;
+  }
+
+  &__topbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__topbar-right-wrapper {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__topbar-link {
+    width: 36px;
+    height: 36px;
+
+    @include onTablet {
+      width: 52px;
+      height: 52px;
+    }
+  }
+
+  &__logo {
+    width: 36px;
+    height: 36px;
+
+    @include onTablet {
+      width: 52px;
+      height: 52px;
+    }
+  }
+
+  &__close-btn {
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+  }
+
+  &__cross-img {
+    max-width: 100%;
+  }
+}

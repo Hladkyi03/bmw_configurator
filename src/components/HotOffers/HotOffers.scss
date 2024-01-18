@@ -1,5 +1,7 @@
+@import "../../cssTools/mixins.scss";
+
 .hot-offers {
-  padding: 30px 0 5px;
+  padding: 30px 0 10px;
   border-bottom: 1px solid rgba($color: gray, $alpha: 0.5);
 
   &__wrapper {
@@ -8,8 +10,17 @@
     gap: 48px;
   }
 
+  &__offer {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
   &__offer-image {
-    width: 100%;
+    width: 43vw;
+    height: 90%;
     max-width: 100%;
   }
 
@@ -29,6 +40,10 @@
     font-weight: 300;
     color: rgb(38, 38, 38);
     text-transform: uppercase;
+
+    @include onDesktop {
+      font-size: 32px;
+    }
   }
 
   &__offer-info {

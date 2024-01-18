@@ -3,17 +3,37 @@ import { Link } from "react-router-dom";
 import { Button } from "../Button/Button";
 import "./Header.scss";
 import logo from "../../media/icons/bmw-logo.svg";
+import { SideMenu } from "../SideMenu/SideMenu";
+import { useState } from "react";
+import useMediaQuery from "../../hooks/useMediaQuery";
+import { Nav } from "../Nav/Nav";
 
 export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuOpen = () => {
+    setIsMenuOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const isLarge = useMediaQuery("(min-width: 1024px)");
+
   return (
     <header className="header">
+      {!isLarge && <SideMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />}
+
       <div className="header__background"></div>
+
       <div className="header__wrapper">
         <div className="container">
           <div className="header__topbar">
-            <Link className="header__topbar-link" to="/home">
-              <img src={logo} alt="logo" className="header__logo" />
-            </Link>
+            <div className="header__left-wrapper">
+              <Link className="header__topbar-link" to="/home">
+                <img src={logo} alt="logo" className="header__logo" />
+              </Link>
+
+              {isLarge && <Nav />}
+            </div>
 
             <div className="header__topbar-right-wrapper">
               <svg
@@ -37,11 +57,15 @@ export const Header = () => {
                 ></path>
               </svg>
 
-              <div className="header__burger-menu">
-                <span className="header__burger-line"></span>
-                <span className="header__burger-line"></span>
-                <span className="header__burger-line"></span>
-              </div>
+              {!isLarge && (
+                <button className="header__burger-btn" onClick={handleMenuOpen}>
+                  <div className="header__burger-menu">
+                    <span className="header__burger-line"></span>
+                    <span className="header__burger-line"></span>
+                    <span className="header__burger-line"></span>
+                  </div>
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -59,7 +83,7 @@ export const Header = () => {
             color="white"
             text="Learn more"
             url="/home"
-            modificators={"button--margin-top-16"}
+            modificators={"button--margin-top-16 button--tablet-medium-sized"}
           />
         </div>
       </div>

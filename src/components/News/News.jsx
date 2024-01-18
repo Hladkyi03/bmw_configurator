@@ -26,7 +26,7 @@ export const News = () => (
           color="white"
           text="Learn more"
           url="/home"
-          modificators={"button--margin-top-28"}
+          modificators={"button--margin-top-28 button--tablet-large"}
         />
       </div>
     </div>
@@ -51,7 +51,7 @@ export const News = () => (
           color="white"
           text="Learn more"
           url="/home"
-          modificators={"button--margin-top-28"}
+          modificators={"button--margin-top-28 button--tablet-large"}
         />
       </div>
     </div>

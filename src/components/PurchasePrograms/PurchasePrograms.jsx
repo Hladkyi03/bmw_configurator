@@ -1,7 +1,9 @@
 import React from "react";
 import "./PurchasePrograms.scss";
 import { Button } from "../Button/Button";
-import newCarsImage from "../../media/img/creation.png";
+import creationCarsImage from "../../media/img/creation.png";
+import usedCarsImage from "../../media/img/used-cars.png";
+import newCarsImage from "../../media/img/new-cars.png";
 
 export const PurchasePrograms = () => (
   <div className="purchase-programs">
@@ -24,14 +26,14 @@ export const PurchasePrograms = () => (
             color="black"
             text="Find"
             url="/home"
-            modificators={"button--margin-top-32"}
+            modificators={"button--margin-top-32 button--tablet-small"}
           />
         </div>
 
         <div className="purchase-programs__programs">
           <div className="purchase-programs__program">
             <img
-              src={newCarsImage}
+              src={usedCarsImage}
               alt="car-icon"
               className="purchase-programs__program-image"
             />
@@ -42,7 +44,7 @@ export const PurchasePrograms = () => (
               color="black"
               text="Find"
               url="/home"
-              modificators={"button--margin-top-32"}
+              modificators={"button--margin-top-32 button--tablet-small"}
             />
           </div>
         </div>
@@ -50,7 +52,7 @@ export const PurchasePrograms = () => (
         <div className="purchase-programs__programs">
           <div className="purchase-programs__program">
             <img
-              src={newCarsImage}
+              src={creationCarsImage}
               alt="car-icon"
               className="purchase-programs__program-image"
             />
@@ -61,7 +63,7 @@ export const PurchasePrograms = () => (
               color="black"
               text="Configurator"
               url="/home"
-              modificators={"button--margin-top-32"}
+              modificators={"button--margin-top-32 button--tablet-small"}
             />
           </div>
         </div>

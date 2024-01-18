@@ -1,0 +1,40 @@
+@import "../../cssTools/mixins.scss";
+
+.nav {
+  padding-top: 30px;
+
+  @include onDesktop {
+    padding: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 70%;
+
+    @include onDesktop {
+      flex-direction: row;
+      width: auto;
+      gap: 25px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: rgb(102, 102, 102);
+    font-size: 16px;
+    font-weight: 700;
+
+    @include onDesktop {
+      color: #fff;
+    }
+  }
+}
