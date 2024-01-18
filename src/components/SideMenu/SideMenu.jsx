@@ -21,7 +21,11 @@ export const SideMenu = ({ isOpen, setIsOpen }) => {
       <div className="sidemenu__topbar">
         <div className="container">
           <div className="sidemenu__topbar-wrapper">
-            <Link className="sidemenu__topbar-link" to="/">
+            <Link
+              className="sidemenu__topbar-link"
+              to="/"
+              onClick={handleOnClick}
+            >
               <img src={logo} alt="logo" className="sidemenu__logo" />
             </Link>
 
@@ -55,7 +59,7 @@ export const SideMenu = ({ isOpen, setIsOpen }) => {
         </div>
       </div>
 
-      <Nav />
+      <Nav setIsOpen={setIsOpen} />
     </div>
   );
 };

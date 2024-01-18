@@ -6,7 +6,7 @@ import "./CatalogFilters.scss";
 export const CatalogFilters = () => {
   return (
     <div className="catalog-filters">
-      <div className="container">
+      <div className="container container--max-width-1008">
         <h2 className="catalog-filters__title">Choose your BMW</h2>
 
         <p className="catalog-filters__subtitle">Filter</p>

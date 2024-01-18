@@ -3,10 +3,17 @@ import { Link, useLocation } from "react-router-dom";
 import "./Nav.scss";
 import cn from "classnames";
 
-export const Nav = () => {
+export const Nav = ({ setIsOpen }) => {
   const location = useLocation();
 
   const isHomePage = location.pathname === "/home";
+
+  const handleOnClick = () => {
+    if (setIsOpen) {
+      setIsOpen(false);
+      document.body.style.overflow = "auto";
+    }
+  }
 
   return (
     <div className="nav">
@@ -19,6 +26,7 @@ export const Nav = () => {
                   "nav__link--black": !isHomePage,
                 })}
                 to="/catalog"
+                onClick={handleOnClick}
               >
                 Vehicles
               </Link>

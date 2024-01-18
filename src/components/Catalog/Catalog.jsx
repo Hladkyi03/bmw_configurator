@@ -6,7 +6,7 @@ import "./Catalog.scss";
 export const Catalog = () => {
   return (
     <div className="catalog">
-      <div className="container">
+      <div className="container container--max-width-1008">
         {bmwCars.map((serie) => (
           <div className="catalog__serie" key={serie.serie}>
             <p className="catalog__serie-title">{serie.serie}</p>
