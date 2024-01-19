@@ -1,9 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { bmwCars } from "../../data/bmwCars";
 import { bmwSeries } from "../../data/bmwSeries";
 import "./CatalogFilters.scss";
 
 export const CatalogFilters = () => {
+  const totalModelsCount = bmwCars.reduce((accumulator, currentSeries) => {
+    return accumulator + currentSeries.models.length;
+  }, 0);
+
   return (
     <div className="catalog-filters">
       <div className="container container--max-width-1008">
@@ -35,7 +40,9 @@ export const CatalogFilters = () => {
           </button>
         </div>
 
-        <p className="catalog-filters__models-count">1</p>
+        <p className="catalog-filters__models-count">
+          {`${totalModelsCount} models`}
+          </p>
 
         <ul className="catalog-filters__series">
           {bmwSeries.map((serie) => (

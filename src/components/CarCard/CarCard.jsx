@@ -1,9 +1,26 @@
 import React from "react";
 import "./CarCard.scss";
+import electricEngineIcon from "../../media/icons/engine-electric.png";
+import hybrideEngineIcon from "../../media/icons/engine-hybride.png";
 
-export const CarCard = ({ model }) => {
+export const CarCard = ({ model, setChoosenModel }) => {
+  const handleOnClick = (model) => {
+    setChoosenModel(model);
+  };
+
+  const engineIcon = model.engineTypes.includes("Plug-in Hybride")
+    ? hybrideEngineIcon
+    : model.engineTypes.includes("Full Electric")
+    ? electricEngineIcon
+    : null;
+
   return (
     <div className="car-card">
+      <button
+        className="car-card__overlay-button"
+        onClick={() => handleOnClick(model)}
+      ></button>
+
       <div className="car-card__image-wrapper">
         <img src={model.image} alt="car" className="car-card__image" />
 
@@ -16,13 +33,19 @@ export const CarCard = ({ model }) => {
           />
         )}
 
-        {/* <img src="" alt="" className="car-card__hybrid-icon" /> */}
+        {engineIcon && (
+          <img
+            src={engineIcon}
+            alt="engine type"
+            className="car-card__engine-icon"
+          />
+        )}
       </div>
 
       <p className="car-card__title">{model.name}</p>
 
       <ul className="car-card__list">
-        {model.engineTypes.map(type => (
+        {model.engineTypes.map((type) => (
           <li className="car-card__list-item" key={type}>
             {type}
           </li>

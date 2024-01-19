@@ -251,7 +251,7 @@ export const bmwCars = [
           "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-2545xM4RIyFnbm9Mb3AgyyIJrjG0suyJRBODlsrjGpuaprQbhSIqppglBgERunl384MlficYiGHqoQxYLW7%25f3tiJ0PCJirQbLDWcQW7%251uSGNqoQh47wMvcYi9SyE2Mb3islBglUjWZcRScHz0YMbnMdoBuyJGy53SBrQ%25r9R2bW8zWubxdqogqaJhTl3ilUjdocRScH7QQMbnMd08KyJGy5BRbrQ%25r9YEaW8zWuES9qogqaFnIl3ilUjvQcRScHz53MbnMdg3uyJGy5iRBrQ%25r9SEjW8zWunD4qogqaGR4l3ilU%25FQcRScHzj7MbnMdgoRyJGy5idtrQ%25r9SmbW8zWun8dqogqaGo0l3ilU%25tocRScHzNBMbnMdgI0yJGy5i4orQ%25r9SeCW8zWunm7qogqaGhJl3ilUC4ocRScH48CMbnMdeoUyJGy5mgvrQ%25r98KGW8zWuob9qogqa3Jal3ilURQGcRScHbziMbnMdJgAyJGy5QdnrQ%25r98QIW8zWuotJqogqa3s7l3ilURKdcRScHHQ9MbnMddQuyJGy559KrQ%25r99dwW8zWuBUbqogqaY2al3ilU4tQcRScHeN3Mb37ur1MESZrMcRoHSWRzMES208bq2b7uRI",
         imageBig:
           "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-2545xM4RIyFnbg9Mb3AgyyIJrjG03uyJRBODlsrjGpuaprQbhSIqppglBgERunl384MlficYiJUdl38hEXq0zkRNSQBL4QSW8JXCqM8q0zAan%25Il38Te0VywMESunrFtyJRhlBg3aHd5cRo6W7%25cRiFCd5cRokW7%258uaUW8JwDJrjGQcRo1W7%25suaUW8JGCyFny5BcXrQ%25r9SEjW8zWubFHqogqaJ%25Fl3ilUQI8cRScH8ZuMbnMdoPLyJGy5BubrQ%25r9Y33W8zWuER4qogqaFQ8l3ilUj7dcRScH7%25UMbnMd0zAyJGy5BO3rQ%25r9SaJW8zWunJHqogqaGQFl3ilU%257BcRScHzesMbnMdgQsyJGy5i03rQ%25r9SBYW8zWunbQqogqaGu6l3ilU%25D8cRScHzRuMbnMdgbEyJGy5i6brQ%25r9S1FW8zWunAEqogqaGsbl3ilU%25KmcRScHzDYMbnMdgPoyJGy5msbrQ%25r9sRmW8zWuKb5qogqaDnOl3ilUR4gcRScHb8UMbnMdJodyJGy5Q3grQ%25r98SGW8zWuonNqogqa3uzl3ilUR3AcRScHb6oMbnMdJCYyJGy5Q4urQ%25r993UW8zWuu3HqogqaaU4l3ilUUupcRScHF58MbnMdjIdyJGy5s63rQ%25r9K1JW8JYHltW7%25XlWrQb9%25cQSW7%25IER8MI8YHQA",
-        engineTypes: ["Full-Electric"],
+        engineTypes: ["Full Electric"],
         isMPower: false,
       },
 
@@ -262,7 +262,7 @@ export const bmwCars = [
           "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-2545xM4RIyFnbm9Mb3AgyyIJrjG0suyJRBODlsrjGpuaprQbhSIqppglBgnRunl384MlficYiGHqoQxYLW7%25f3tiJ0PCJirQbLDWcQW7%251uS3EqoQh47wMvcYi9StrfMb3islBglUjWDcRScHz01MbnMdoi0yJGy53ARrQ%25r9RXHW8zWubxGqogqaJhOl3ilUjdocRScH7QQMbnMd03RyJGy5Bg2rQ%25r9YpJW8zWuEfuqogqaGH8l3ilU%25JJcRScHzo9MbnMdg30yJGy5isErQ%25r9SKCW8zWunYEqogqaGJ8l3ilU%25a1cRScHzqjMbnMdg43yJGy5iJUrQ%25r9S1JW8zWunAjqogqaGsbl3ilU%25KmcRScHzDYMbnMdgPoyJGy5msbrQ%25r9sRmW8zWuKb5qogqaDnOl3ilUR4gcRScHb8UMbnMdJodyJGy5Q3grQ%25r98SGW8zWuonNqogqa3uzl3ilUR3AcRScHb6oMbnMdJCYyJGy5Q4urQ%25r993UW8zWuuRGqogqaaRdl3ilUUHecRScHHwsMbnMdjYYyJGy5765rQ%25r9K1RW8zWuDAQqogqaC25l38F5MIlBghMlqoQagyoGlBg1jJ3r13F5ot",
         imageBig:
           "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-2545xM4RIyFnbg9Mb3AgyyIJrjG03uyJRBODlsrjGpuaprQbhSIqppglBgnRunl384MlficYiJUdl38hEXq0zkRNSQBL4QSW8JXCqM8q0zAanRFl38Te0VywMESunNWkyJRhlBg3aHd5cRo6W7%25cRiFCd5cRokW7%258uaUW8JwDJrjGQcRo1W7%25suaUW8JGCyFny5BcerQ%25r9SEtW8zWubGEqogqaJNQl3ilUQT9cRScH8ZgMbnMdoPkyJGy5BubrQ%25r9Y33W8zWuEJQqogqaFnIl3ilUjvocRScH7wHMbnMdg9RyJGy5ioorQ%25r9SbUW8zWunJEqogqaGC7l3ilU%254mcRScHzj7MbnMdgoRyJGy5idtrQ%25r9SMBW8zWunsJqogqaGo5l3ilU%25tocRScHzNBMbnMdgC8yJGy5i4DrQ%25r9SejW8zWunxbqogqaDC8l3ilUCQDcRScH48aMbnMdezkyJGy5QsnrQ%25r98R5W8zWuobuqogqa3Jnl3ilUR%25gcRScHbz1MbnMdJHSyJGy5QJNrQ%25r982bW8zWuomjqogqa3sHl3ilUUJ5cRScHHQgMbnMddQuyJGy559KrQ%25r99pCW8zWuBjjqogqaY2al3ilU4tQcRScHeN3MbnMdmIayJR0aWAyFnPWyMb3dnqbgyFntBoJltJ0ab6",
-        engineTypes: ["Full-Electric"],
+        engineTypes: ["Full Electric"],
         isMPower: true,
       },
     ],

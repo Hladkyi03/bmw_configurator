@@ -1,5 +1,17 @@
 .car-card {
   width: 25%;
+  position: relative;
+
+  &__overlay-button {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    cursor: pointer;
+  }
 
   &__image-wrapper {
     position: relative;
@@ -17,6 +29,14 @@
     height: auto;
     left: 0;
     bottom: 5px;
+  }
+
+  &__engine-icon {
+    position: absolute;
+    width: 15%;
+    height: auto;
+    left: 15px;
+    top: 15px;
   }
 
   &__title {

@@ -8,6 +8,7 @@ export const Button = ({ color, text, url, modificators }) => {
     <button className={cn("button", modificators, {
       "button--white": color === "white",
       "button--black": color === "black",
+      "button--blue": color === "blue",
     })}>
       <Link className="button__link" to={`/${url}`}>
         {text}
