@@ -47,8 +47,12 @@ export const CatalogFilters = () => {
             <Link className="catalog-filters__link">Plug-in hybrid</Link>
           </button>
 
-          <button className="catalog-filters__button">
-            <span className="catalog-filters__cross"></span>
+          <button
+            className="catalog-filters__button catalog-filters__button--active"
+          >
+            <span
+              className="catalog-filters__cross catalog-filters__cross--active"
+            ></span>
 
             <Link className="catalog-filters__link">Electric</Link>
           </button>

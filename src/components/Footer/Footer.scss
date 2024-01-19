@@ -73,6 +73,11 @@
     color: rgb(77, 77, 77);
     font-size: 14px;
     font-weight: 700;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: rgb(0, 0, 0);
+    }
   }
 
   &__socials-wrapper {
@@ -95,6 +100,11 @@
 
   &__social-icon {
     max-width: 100%;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__rights {
@@ -130,5 +140,10 @@
     display: block;
     font-weight: 700;
     font-size: 12px;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: rgb(0, 0, 0);
+    }
   }
 }

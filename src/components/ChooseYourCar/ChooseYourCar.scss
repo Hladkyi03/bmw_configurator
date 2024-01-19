@@ -27,9 +27,17 @@
     width: 30%;
     display: block;
     margin-left: 10%;
+    color: rgb(77, 77, 77);
+    font-size: 14px;
+    font-weight: 700;
+    transition: color 0.2s ease-in-out;
 
     @include onTablet {
       margin-left: 0;
+    }
+
+    &:hover {
+      color: rgb(0, 0, 0);
     }
   }
 }

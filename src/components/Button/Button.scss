@@ -11,20 +11,35 @@
   background: transparent;
   height: 52px;
   cursor: pointer;
+  transition: color, background-color 0.2s ease-in-out;
 
   &--white {
     border: 1.5px solid #f2f2f2;
     color: #f2f2f2;
+
+    &:hover {
+      background-color: #f2f2f2;
+      color: #262626;
+    }
   }
 
   &--black {
     border: 1.5px solid #262626;
     color: #262626;
+
+    &:hover {
+      background-color: #262626;
+      color: #f2f2f2;
+    }
   }
 
   &--blue {
     background-color: #1c69d4;
     color: #f6f6f6;
+
+    &:hover {
+      background-color: #0d418a;
+    }
   }
 
   &--border-radius-0 {

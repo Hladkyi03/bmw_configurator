@@ -32,13 +32,26 @@
     color: rgb(102, 102, 102);
     font-size: 16px;
     font-weight: 700;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: rgb(0, 0, 0);
+    }
 
     @include onDesktop {
       color: #fff;
+
+      &:hover {
+        color: rgb(100, 101, 105);
+      }
     }
 
     &--black {
       color: rgb(102, 102, 102);
+
+      &:hover {
+        color: rgb(0, 0, 0);
+      }
     }
   }
 }
