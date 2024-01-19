@@ -3,11 +3,14 @@ import { Button } from "../Button/Button";
 import "./ChoosenCar.scss";
 import carIcon from "../../media/icons/car-icon.png";
 import crossIcon from "../../media/icons/cross.svg";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 export const ChoosenCar = ({ model, setChoosenModel }) => {
   const handleOnClick = () => {
     setChoosenModel(null);
   };
+
+  const isSmall = useMediaQuery("(max-width: 1023px)");
 
   return (
     <div className="choosen-car">
@@ -42,12 +45,14 @@ export const ChoosenCar = ({ model, setChoosenModel }) => {
             ))}
           </ul>
 
-          <Button
-            color="black"
-            text="Learn More"
-            url="/home"
-            modificators={"button--margin-top-auto button--border-radius-0"}
-          />
+          {!isSmall && (
+            <Button
+              color="black"
+              text="Learn More"
+              url="/home"
+              modificators={"button--margin-top-auto button--border-radius-0"}
+            />
+          )}
         </div>
 
         <div className="choosen-car__block choosen-car__block--second">
@@ -58,14 +63,23 @@ export const ChoosenCar = ({ model, setChoosenModel }) => {
           />
 
           <Button
-            color="blue"
-            text="Configurate"
+            color={`${isSmall ? "black" : "blue"}`}
+            text={`${isSmall ? "Learn more" : "Configurate"}`}
             url="/configurator"
             modificators={"button--margin-top-16 button--border-radius-0"}
           />
         </div>
 
-        <div className="choosen-car__block choosen-car__block--third"></div>
+        <div className="choosen-car__block choosen-car__block--third">
+          {isSmall && (
+            <Button
+              color="blue"
+              text="Configurate"
+              url="/configurator"
+              modificators={"button--margin-top-16 button--border-radius-0"}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

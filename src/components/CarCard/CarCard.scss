@@ -1,6 +1,16 @@
+@import "../../cssTools/mixins.scss";
+
 .car-card {
-  width: 25%;
+  width: 100%;
   position: relative;
+
+  @include onTablet {
+    width: 50%;
+  }
+
+  @include onDesktop {
+    width: 25%;
+  }
 
   &__overlay-button {
     background: transparent;

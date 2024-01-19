@@ -2,12 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { bmwCars } from "../../data/bmwCars";
 import { bmwSeries } from "../../data/bmwSeries";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import "./CatalogFilters.scss";
 
 export const CatalogFilters = () => {
   const totalModelsCount = bmwCars.reduce((accumulator, currentSeries) => {
     return accumulator + currentSeries.models.length;
   }, 0);
+
+  const isExtraSmall = useMediaQuery("(max-width: 767px)");
 
   return (
     <div className="catalog-filters">
@@ -44,7 +47,7 @@ export const CatalogFilters = () => {
           {`${totalModelsCount} models`}
           </p>
 
-        <ul className="catalog-filters__series">
+        {!isExtraSmall && (<ul className="catalog-filters__series">
           {bmwSeries.map((serie) => (
             <li className="catalog-filters__series-item" key={serie}>
               <button className="catalog-filters__series-button">
@@ -52,7 +55,7 @@ export const CatalogFilters = () => {
               </button>
             </li>
           ))}
-        </ul>
+        </ul>)}
       </div>
     </div>
   );

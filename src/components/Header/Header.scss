@@ -52,14 +52,18 @@
     align-items: center;
     padding-bottom: 20px;
     padding-right: 15px;
-    margin-inline: 36px;
 
     @include onDesktop {
       border-bottom: 1px solid #fff;
     }
 
     &--small {
-      border-bottom: 1px solid #bbb;
+      margin-inline: 0;
+
+      @include onDesktop {
+        border-bottom: 1px solid #bbb;
+        margin-inline: 36px;
+      }
     }
   }
 
