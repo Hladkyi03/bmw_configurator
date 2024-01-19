@@ -6,8 +6,12 @@ import crossIcon from "../../media/icons/cross.svg";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
 export const ChoosenCar = ({ model, setChoosenModel }) => {
+  const isMobile = useMediaQuery("(max-width: 767px)");
+
   const handleOnClick = () => {
-    document.body.style.overflow = "auto";
+    if (isMobile) {
+      document.body.style.overflow = "auto";
+    }
     setChoosenModel(null);
   };
 

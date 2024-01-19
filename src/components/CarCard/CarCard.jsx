@@ -2,18 +2,24 @@ import React from "react";
 import "./CarCard.scss";
 import electricEngineIcon from "../../media/icons/engine-electric.png";
 import hybrideEngineIcon from "../../media/icons/engine-hybride.png";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 export const CarCard = ({ model, setChoosenModel }) => {
+  const isMobile = useMediaQuery("(max-width: 767px)");
+
   const handleOnClick = (model) => {
-    document.body.style.overflow = "hidden";
+    if (isMobile) {
+      document.body.style.overflow = "hidden";
+    }
+
     setChoosenModel(model);
   };
 
   const engineIcon = model.engineTypes.includes("Plug-in Hybride")
     ? hybrideEngineIcon
     : model.engineTypes.includes("Full Electric")
-    ? electricEngineIcon
-    : null;
+      ? electricEngineIcon
+      : null;
 
   return (
     <div className="car-card">

@@ -83,6 +83,7 @@ export const CatalogFilters = () => {
               className="catalog-filters__input"
               onFocus={handleOnFocus}
               onBlur={() => handleBlur()}
+              placeholder="Serie"
               value={serieValue}
               readOnly
             />
