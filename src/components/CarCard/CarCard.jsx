@@ -5,6 +5,7 @@ import hybrideEngineIcon from "../../media/icons/engine-hybride.png";
 
 export const CarCard = ({ model, setChoosenModel }) => {
   const handleOnClick = (model) => {
+    document.body.style.overflow = "hidden";
     setChoosenModel(model);
   };
 

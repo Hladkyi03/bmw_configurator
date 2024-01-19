@@ -7,6 +7,7 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 
 export const ChoosenCar = ({ model, setChoosenModel }) => {
   const handleOnClick = () => {
+    document.body.style.overflow = "auto";
     setChoosenModel(null);
   };
 
