@@ -54,7 +54,7 @@ export const ChoosenCar = ({ model, setChoosenModel }) => {
             <Button
               color="black"
               text="Learn More"
-              url="/home"
+              url="home"
               modificators={"button--margin-top-auto button--border-radius-0"}
             />
           )}
@@ -70,7 +70,7 @@ export const ChoosenCar = ({ model, setChoosenModel }) => {
           <Button
             color={`${isSmall ? "black" : "blue"}`}
             text={`${isSmall ? "Learn more" : "Configurate"}`}
-            url="/configurator"
+            url={`${isSmall ? "home" : `configurator/${model.id}`}`}
             modificators={"button--margin-top-16 button--border-radius-0"}
           />
         </div>
@@ -80,7 +80,7 @@ export const ChoosenCar = ({ model, setChoosenModel }) => {
             <Button
               color="blue"
               text="Configurate"
-              url="/configurator"
+              url={`configurator/${model.id}`}
               modificators={"button--margin-top-16 button--border-radius-0"}
             />
           )}

@@ -1,0 +1,120 @@
+.engine-configurator {
+  padding: 20px;
+  border-bottom: 1px solid #e6e6e6;
+  &__title {
+    font-size: 20px;
+    color: #262626;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  &__wrapper {
+    margin-top: 20px;
+    border: 2px solid #4d4d4d;
+    background: #f6f6f6;
+    padding: 20px;
+  }
+
+  &__model-name {
+    font-size: 16px;
+    color: #262626;
+    font-weight: 700;
+  }
+
+  &__fuel-type {
+    margin-top: 4px;
+    padding: 2px 4px;
+    background: #e6e6e6;
+    font-size: 12px;
+    color: #262626;
+    font-weight: 700;
+    width: max-content;
+  }
+
+  &__start-price {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #262626;
+    font-weight: 400;
+  }
+
+  &__transmission-title {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #262626;
+    font-weight: 700;
+  }
+
+  &__transmission-type {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #262626;
+    font-weight: 400;
+  }
+
+  &__buttons-wrapper {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__radio-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    margin: 0;
+    font-family: inherit;
+    font-weight: 400;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid #bbb;
+      box-sizing: border-box;
+    }
+
+    &--active {
+      &::before {
+        border: 8px solid #4d4d4d;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    font-size: 14px;
+    color: #262626;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  &__info-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__info-list-caption {
+    color: #666;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  &__info-list-info {
+    margin-top: 3px;
+    font-size: 14px;
+    color: #262626;
+    font-weight: 700;
+  }
+}
