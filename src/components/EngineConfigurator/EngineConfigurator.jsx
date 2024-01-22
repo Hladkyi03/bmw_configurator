@@ -5,7 +5,7 @@ import "./EngineConfigurator.scss";
 import { useState } from "react";
 import cn from "classnames";
 
-export const EngineConfigurator = ({ carName, engineTypes }) => {
+export const EngineConfigurator = ({ engineTypes }) => {
   // const [searchParams] = useSearchParams();
 
   const [selectedEngine, setSelectedEngine] = useState(engineTypes[0]);
@@ -33,7 +33,9 @@ export const EngineConfigurator = ({ carName, engineTypes }) => {
       <h2 className="engine-configurator__title">Двигун</h2>
 
       <div className="engine-configurator__wrapper">
-        <h3 className="engine-configurator__model-name">{carName}</h3>
+        <h3 className="engine-configurator__model-name">
+          {selectedEngine.title}
+        </h3>
 
         <p className="engine-configurator__fuel-type">
           {selectedEngine.fuelType}
