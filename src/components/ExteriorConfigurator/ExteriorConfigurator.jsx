@@ -1,21 +1,29 @@
 import React from "react";
-import { useState } from "react";
+import { useContext } from "react";
+import { DispatchContext, StateContext } from
+  "../CarConfiguratorContext/CarConfigurationContext";
 import "./ExteriorConfigurator.scss";
 
 export const ExteriorConfigurator = ({ availableColors }) => {
-  const [selectedColor, setSelectedColor] = useState(
-    availableColors[0].colors[0]
-  );
+  const carConfig = useContext(StateContext)
+  const dispatch = useContext(DispatchContext);
 
   const handleBtnClick = (clickedColor) => {
-    setSelectedColor(clickedColor);
+    const action = {
+      type: "addCarColor",
+      payload: {
+        color: clickedColor,
+      }
+    }
+
+    dispatch(action);
   };
 
   const checkColorInList = (colorId, allColors) => {
     return allColors.some((color) => color.id === colorId);
   };
 
-  console.log(selectedColor.title);
+  console.log(carConfig.color);
 
   return (
     <div className="exterior-configurator">
@@ -50,14 +58,14 @@ export const ExteriorConfigurator = ({ availableColors }) => {
               ))}
             </ul>
 
-            {checkColorInList(selectedColor.id, color.colors) && (
+            {checkColorInList(carConfig.color.id, color.colors) && (
               <div className="exterior-configurator__selected-info">
                 <p className="exterior-configurator__color-title">
-                  {selectedColor.title}
+                  {carConfig.color.title}
                 </p>
 
                 <p className="exterior-configurator__color-price">
-                  {`${selectedColor.price} грн`}
+                  {`${carConfig.color.price} грн`}
                 </p>
               </div>
             )}

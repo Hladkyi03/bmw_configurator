@@ -1,32 +1,43 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./EngineConfigurator.scss";
 // import { Link, useSearchParams } from "react-router-dom";
 // import { getSearchWith } from "../../utils/getSearchWith";
 import { useState } from "react";
 import cn from "classnames";
+import { DispatchContext, StateContext } from
+  "../CarConfiguratorContext/CarConfigurationContext";
 
-export const EngineConfigurator = ({ engineTypes }) => {
+export const EngineConfigurator = ({ setIsOverlayOpen }) => {
   // const [searchParams] = useSearchParams();
 
-  const [selectedEngine, setSelectedEngine] = useState(engineTypes[0]);
-  const [selectedTransmission, setSelectedTransmission] = useState(
-    engineTypes[0].transmission[0]
-  );
+  const carConfig = useContext(StateContext);
+  const dispatch = useContext(DispatchContext);
+
+  const { engine, transmission } = carConfig;
+
   const [isDropdownActive, setIsDropdownActive] = useState(false);
 
   // const handleBtnClick = () => {
   //   return getSearchWith(searchParams, "category", "tttt").toString();
   // };
 
+  const handleOpenBtnClick = () => {
+    document.body.style.overflow = "hidden";
+    setIsOverlayOpen(true);
+  }
+
   const handleDropdownBtnClick = () => {
     setIsDropdownActive((prev) => !prev);
   };
 
   const handleRadioBtnClick = (currentTransmission) => {
-    setSelectedTransmission(currentTransmission);
-  };
+    const action = {
+      type: "addCarTransmission",
+      payload: { transmission: currentTransmission },
+    }
 
-  console.log(setSelectedEngine);
+    dispatch(action);
+  };
 
   return (
     <div className="engine-configurator">
@@ -34,31 +45,31 @@ export const EngineConfigurator = ({ engineTypes }) => {
 
       <div className="engine-configurator__wrapper">
         <h3 className="engine-configurator__model-name">
-          {selectedEngine.title}
+          {engine.title}
         </h3>
 
         <p className="engine-configurator__fuel-type">
-          {selectedEngine.fuelType}
+          {engine.fuelType}
         </p>
 
         <p className="engine-configurator__start-price">
-          {`Від ${selectedEngine.price + selectedTransmission.price} грн`}
+          {`Від ${engine.price + transmission.price} грн`}
         </p>
 
         <h4 className="engine-configurator__transmission-title">Трансмісія</h4>
 
         <p className="engine-configurator__transmission-type">
-          {selectedTransmission.title}
+          {transmission.title}
         </p>
 
         <div className="engine-configurator__buttons-wrapper">
-          {selectedEngine.transmission.map((carTransmission) => (
+          {engine.transmission.map((carTransmission) => (
             <button
               type="radio"
               name="car-transmission"
               className={cn("engine-configurator__radio-button", {
                 "engine-configurator__radio-button--active":
-                  selectedTransmission.title === carTransmission.title,
+                  transmission.title === carTransmission.title,
               })}
               key={carTransmission.title}
               onClick={() => handleRadioBtnClick(carTransmission)}
@@ -82,7 +93,7 @@ export const EngineConfigurator = ({ engineTypes }) => {
                 Fuel type
               </p>
               <p className="engine-configurator__info-list-info">
-                {selectedEngine.fuelType}
+                {engine.fuelType}
               </p>
             </li>
 
@@ -91,7 +102,7 @@ export const EngineConfigurator = ({ engineTypes }) => {
                 Engine power
               </p>
               <p className="engine-configurator__info-list-info">
-                {`${selectedEngine.horsePowers} (h.p.)`}
+                {`${engine.horsePowers} (h.p.)`}
               </p>
             </li>
 
@@ -100,7 +111,7 @@ export const EngineConfigurator = ({ engineTypes }) => {
                 Fuel consumption
               </p>
               <p className="engine-configurator__info-list-info">
-                {`${selectedTransmission.fuelConsumption}l/ 100km`}
+                {`${transmission.fuelConsumption}l/ 100km`}
               </p>
             </li>
 
@@ -109,7 +120,7 @@ export const EngineConfigurator = ({ engineTypes }) => {
                 Transmission
               </p>
               <p className="engine-configurator__info-list-info">
-                {selectedTransmission.title}
+                {transmission.title}
               </p>
             </li>
 
@@ -118,7 +129,7 @@ export const EngineConfigurator = ({ engineTypes }) => {
                 Drive unit
               </p>
               <p className="engine-configurator__info-list-info">
-                {selectedEngine.driveUnit}
+                {engine.driveUnit}
               </p>
             </li>
 
@@ -127,7 +138,7 @@ export const EngineConfigurator = ({ engineTypes }) => {
                 Acceleration
               </p>
               <p className="engine-configurator__info-list-info">
-                {`${selectedTransmission.acceleration} s`}
+                {`${transmission.acceleration} s`}
               </p>
             </li>
 
@@ -136,12 +147,19 @@ export const EngineConfigurator = ({ engineTypes }) => {
                 Emissions CO2
               </p>
               <p className="engine-configurator__info-list-info">
-                {`${selectedTransmission.emissionsCO2} g/km`}
+                {`${transmission.emissionsCO2} g/km`}
               </p>
             </li>
           </ul>
         )}
       </div>
+
+      <button
+        className="engine-configurator__overlay-button"
+        onClick={handleOpenBtnClick}
+      >
+        Подивитись всі варіанти виконання
+      </button>
     </div>
   );
 };
