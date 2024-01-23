@@ -8,10 +8,10 @@ import './TotalPrice.scss';
 export const TotalPrice = () => {
   const carConfig = useContext(StateContext);
 
-  const { engine, transmission, color } = carConfig;
+  const { engine, transmission, color, wheels } = carConfig;
 
   const countTotalSum = () => {
-    return engine.price + transmission.price + color.price;
+    return engine.price + transmission.price + color.price + wheels.price;
   }
 
   return (

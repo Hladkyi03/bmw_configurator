@@ -1,6 +1,5 @@
-.exterior-configurator {
+.wheels-configurator {
   padding: 20px;
-  border-bottom: 1px solid #e6e6e6;
 
   &__title {
     font-size: 20px;
@@ -9,37 +8,13 @@
     font-weight: 400;
   }
 
-  &__subtitle {
-    margin-top: 24px;
-    font-size: 14px;
-    color: #666;
-    font-weight: 400;
-    text-transform: uppercase;
-  }
-
   &__wrapper {
     margin-top: 20px;
     padding: 20px;
     background-color: #f6f6f6;
   }
 
-  &__category {
-    padding-bottom: 24px;
-    color: #262626;
-    font-size: 10px;
-    font-weight: 400;
-    text-transform: uppercase;
-  }
-
-  &__caterogy-title {
-    font-size: 10px;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: #262626;
-    letter-spacing: 2px;
-  }
-
-  &__colors-list {
+  &__wheels-list {
     display: flex;
     gap: 24px;
     margin-top: 16px;
@@ -50,7 +25,7 @@
     cursor: pointer;
   }
 
-  &__color-image {
+  &__wheel-image {
     width: 72px;
     height: 72px;
     border-radius: 50%;
@@ -60,13 +35,14 @@
     margin-top: 20px;
   }
 
-  &__color-title {
+  &__wheel-title {
     color: #262626;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 
-  &__color-price {
+  &__wheel-price {
     margin-top: 10px;
     font-size: 14px;
     color: #262626;

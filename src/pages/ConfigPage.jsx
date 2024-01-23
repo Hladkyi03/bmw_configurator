@@ -6,12 +6,14 @@ import {
   StateContext,
 } from "../components/CarConfiguratorContext/CarConfigurationContext";
 import { EngineConfigurator }
-from "../components/EngineConfigurator/EngineConfigurator";
+  from "../components/EngineConfigurator/EngineConfigurator";
 import { EngineOverlay } from "../components/EngineOverlay/EngineOverlay";
 import { ExteriorConfigurator }
-from "../components/ExteriorConfigurator/ExteriorConfigurator";
+  from "../components/ExteriorConfigurator/ExteriorConfigurator";
 import { TotalPrice } from "../components/TotalPrice/TotalPrice";
 import { carsDetails } from "../data/carsDetails";
+import { WheelsConfigurator } from
+  "../components/WheelsConfigurator/WheelsConfigurator";
 
 export const ConfigPage = () => {
   const { id } = useParams();
@@ -30,6 +32,7 @@ export const ConfigPage = () => {
         engine: selectedCar.engineTypes[0],
         transmission: selectedCar.engineTypes[0].transmission[0],
         color: selectedCar.availableColors[0].colors[0],
+        wheels: selectedCar.wheels[0],
       },
     };
 
@@ -54,6 +57,10 @@ export const ConfigPage = () => {
           engineTypes={selectedCar.engineTypes}
           setIsOverlayOpen={setIsOverlayOpen}
         />
+      )}
+
+      {state.wheels && (
+        <WheelsConfigurator wheels={selectedCar.wheels} />
       )}
 
       {state.engine && (

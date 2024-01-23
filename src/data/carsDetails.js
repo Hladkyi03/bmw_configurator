@@ -2,6 +2,7 @@
 export const carsDetails = [
   {
     id: 1,
+    name: "BMW 1 Series",
     engineTypes: [
       {
         title: "BMW 116i",
@@ -165,6 +166,31 @@ export const carsDetails = [
             price: 0,
           },
         ]
+      }
+    ],
+    wheels: [
+      {
+        title: `Диски Multi-spoke style 488 Bicolour`,
+        diameter: 18,
+        id: "SO1L2",
+        imageSrc: "images/wheels/wheels-so1l2.webp",
+        price: 0,
+      },
+
+      {
+        title: `Диски Multi-spoke style 546 зі спеціальними шинами`,
+        diameter: 17,
+        id: "SO1L1",
+        imageSrc: "images/wheels/wheels-so1l1.webp",
+        price: 44000,
+      },
+
+      {
+        title: `Диски Double-spoke style 549 Bicolour зі спеціальними шинами`,
+        diameter: 17,
+        id: "SO1US",
+        imageSrc: "images/wheels/wheels-so1us.webp",
+        price: 87957,
       }
     ]
   },
@@ -336,6 +362,31 @@ export const carsDetails = [
           },
         ]
       }
+    ],
+    wheels: [
+      {
+        title: `M легкосплавні диски V-spoke 557 M Bicolour зі спортивними шинами`,
+        diameter: 19,
+        id: "SO1EY",
+        imageSrc: "images/wheels/wheels-so1ey.webp",
+        price: 0,
+      },
+
+      {
+        title: `M Диски V-spoke style 554 M зі спеціальними шинами`,
+        diameter: 18,
+        id: "SO1Y0",
+        imageSrc: "images/wheels/wheels-so1y0.webp",
+        price: 44000,
+      },
+
+      {
+        title: `M легкосплавні диски Double spoke 552 M Bicolour зі спортивними шинами`,
+        diameter: 19,
+        id: "SO1EX",
+        imageSrc: "images/wheels/wheels-so1ex.webp",
+        price: 87957,
+      }
     ]
   },
 
@@ -480,6 +531,31 @@ export const carsDetails = [
             price: 0,
           },
         ]
+      }
+    ],
+    wheels: [
+      {
+        title: `M легкосплавні диски V-spoke 557 M Bicolour зі спортивними шинами`,
+        diameter: 19,
+        id: "S01EY",
+        imageSrc: "images/wheels/wheels-1.webp",
+        price: 0,
+      },
+
+      {
+        title: `M Диски V-spoke style 554 M зі спеціальними шинами`,
+        diameter: 18,
+        id: "S01Y0",
+        imageSrc: "images/wheels/wheels-2.webp",
+        price: 44000,
+      },
+
+      {
+        title: `M легкосплавні диски Double spoke 552 M Bicolour зі спортивними шинами`,
+        diameter: 19,
+        id: "S01EX",
+        imageSrc: "images/wheels/wheels-3.webp",
+        price: 87957,
       }
     ]
   },

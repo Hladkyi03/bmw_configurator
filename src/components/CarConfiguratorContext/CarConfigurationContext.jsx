@@ -4,6 +4,7 @@ const initialState = {
   engine: null,
   transmission: null,
   color: null,
+  wheels: null,
 };
 
 export const StateContext = React.createContext(initialState);
@@ -17,6 +18,7 @@ export const GlobalStateProvider = ({ children }) => {
           engine: action.payload.engine,
           transmission: action.payload.transmission,
           color: action.payload.color,
+          wheels: action.payload.wheels
         };
       }
 
@@ -42,6 +44,13 @@ export const GlobalStateProvider = ({ children }) => {
         };
       }
 
+      case 'addCarWheels': {
+        return {
+          ...state,
+          wheels: action.payload.wheels,
+        };
+      }
+
       default:
         return state;
     }
@@ -49,7 +58,6 @@ export const GlobalStateProvider = ({ children }) => {
 
   const dispatchAndSave = (action) => {
     dispatch(action);
-    // setCarConfig((prevState) => reducer(prevState, action)); // це можна видалити
   };
 
   return (
