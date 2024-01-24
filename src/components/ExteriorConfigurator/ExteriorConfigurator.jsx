@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { DispatchContext, StateContext } from
   "../CarConfiguratorContext/CarConfigurationContext";
 import "./ExteriorConfigurator.scss";
+import cn from "classnames";
 
 export const ExteriorConfigurator = ({ availableColors }) => {
   const carConfig = useContext(StateContext)
@@ -22,8 +23,6 @@ export const ExteriorConfigurator = ({ availableColors }) => {
   const checkColorInList = (colorId, allColors) => {
     return allColors.some((color) => color.id === colorId);
   };
-
-  console.log(carConfig.color);
 
   return (
     <div className="exterior-configurator">
@@ -45,13 +44,19 @@ export const ExteriorConfigurator = ({ availableColors }) => {
                   key={carColor.id}
                 >
                   <button
-                    className="exterior-configurator__list-button"
+                    className={cn("exterior-configurator__list-button", {
+                      "exterior-configurator__list-button--active":
+                        carColor.id === carConfig.color.id,
+                    })}
                     onClick={() => handleBtnClick(carColor)}
                   >
                     <img
                       src={carColor.imageSrc}
                       alt="color"
-                      className="exterior-configurator__color-image"
+                      className={cn("exterior-configurator__color-image", {
+                        "exterior-configurator__color-image--active":
+                          carColor.id === carConfig.color.id,
+                      })}
                     />
                   </button>
                 </li>

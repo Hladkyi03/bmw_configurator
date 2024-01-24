@@ -1,0 +1,14 @@
+.car-not-found {
+  background: url("../../media/img/not-found.jpg") center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 100px 0;
+  min-height: 90vh;
+
+  &__title {
+    font-size: 32px;
+    color: #fff;
+  }
+}

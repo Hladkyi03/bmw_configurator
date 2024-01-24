@@ -34,7 +34,12 @@ export const EngineInfo = ({
   };
 
   return (
-    <div className="engine-overlay__engine" key={engine.title}>
+    <div
+      className={cn("engine-overlay__engine", {
+        "engine-overlay__engine--active": engine.title === selectedEngine.title,
+      })}
+      key={engine.title}
+    >
       <h3 className="engine-configurator__model-name">{engine.title}</h3>
 
       <p className="engine-configurator__fuel-type">{engine.fuelType}</p>
@@ -44,10 +49,6 @@ export const EngineInfo = ({
       </p>
 
       <h4 className="engine-configurator__transmission-title">Трансмісія</h4>
-
-      <p className="engine-configurator__transmission-type">
-        {transmission.title}
-      </p>
 
       <div className="engine-configurator__buttons-wrapper">
         {engine.transmission.map((carTransmission) => (

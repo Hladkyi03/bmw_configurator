@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import './WheelsConfigurator.scss';
 import { DispatchContext, StateContext } from
   "../CarConfiguratorContext/CarConfigurationContext";
+import cn from "classnames";
 
 export const WheelsConfigurator = ({ wheels }) => {
   const carConfig = useContext(StateContext)
@@ -18,8 +19,6 @@ export const WheelsConfigurator = ({ wheels }) => {
     dispatch(action);
   };
 
-  console.log(carConfig);
-
   return (
     <div className="wheels-configurator">
       <h3 className="wheels-configurator__title">Wheels</h3>
@@ -32,13 +31,19 @@ export const WheelsConfigurator = ({ wheels }) => {
               key={wheel.id}
             >
               <button
-                className="wheels-configurator__list-button"
+                className={cn("wheels-configurator__list-button", {
+                  "wheels-configurator__list-button--active":
+                    wheel.id === carConfig.wheels.id,
+                })}
                 onClick={() => handleBtnClick(wheel)}
               >
                 <img
                   src={wheel.imageSrc}
                   alt="color"
-                  className="wheels-configurator__wheel-image"
+                  className={cn("wheels-configurator__wheel-image", {
+                    "wheels-configurator__wheel-image--active":
+                      wheel.id === carConfig.wheels.id,
+                  })}
                 />
               </button>
             </li>

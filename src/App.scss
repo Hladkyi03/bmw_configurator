@@ -59,7 +59,23 @@ h1 {
       max-width: 1280px;
       padding-inline: 60px;
     }
+  }
+}
 
+.config-page__container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
 
+  @include onDesktop {
+    flex-direction: row;
+  }
+}
+
+.config-page__wrapper {
+  width: auto;
+
+  @include onDesktop {
+    width: 360px;
   }
 }
