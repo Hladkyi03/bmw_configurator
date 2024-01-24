@@ -8,8 +8,11 @@ import { Link } from "react-router-dom";
 import { contactsListItems } from "../../data/contactsListItems";
 import { quickLinksListItems } from "../../data/quickLinksListItems";
 import { bmwWorldListItems } from "../../data/bmwWorldListItems";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer">
       <ChooseYourCar />
@@ -17,14 +20,20 @@ export const Footer = () => {
       <div className="footer__content-wrapper">
         <div className="container">
           <div className="footer__buttons-container">
-            <ButtonDropdown title={"Contacts"} listItems={contactsListItems} />
+            <ButtonDropdown
+              title={t("footerContactsTitle")}
+              listItems={contactsListItems}
+            />
 
             <ButtonDropdown
-              title={"Quick links"}
+              title={t("footerQuickLinksTitle")}
               listItems={quickLinksListItems}
             />
 
-            <ButtonDropdown title={"BMW World"} listItems={bmwWorldListItems} />
+            <ButtonDropdown
+              title={t("footerBmwWorldTitle")}
+              listItems={bmwWorldListItems}
+            />
           </div>
         </div>
 
@@ -66,7 +75,7 @@ export const Footer = () => {
                 to="https://www.bmw.ua/uk/footer/metanavigation/legal-disclaimer-pool/legal-disclaimer.html"
                 className="footer__bottom-list-link"
               >
-                Legal disclaimer
+                {t("footerLegalDisclaimer")}
               </Link>
             </li>
 
@@ -76,7 +85,7 @@ export const Footer = () => {
                 to="https://www.bmw.ua/uk/footer/metanavigation/legal-notice-pool/imprint.html"
                 className="footer__bottom-list-link"
               >
-                Source data
+                {t("footerSourceData")}
               </Link>
             </li>
 
@@ -86,7 +95,7 @@ export const Footer = () => {
                 to="https://www.bmw.ua/uk/footer/footer-section/cookie-policy.html"
                 className="footer__bottom-list-link"
               >
-                Cookie files
+                {t("footerCookieFiles")}
               </Link>
             </li>
           </ul>

@@ -9,6 +9,10 @@
   }
 
   @include onDesktop {
+    width: 33.3%;
+  }
+
+  @media (min-width: 1220px) {
     width: 25%;
   }
 

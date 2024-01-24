@@ -1,17 +1,19 @@
+import i18n from "../translations/i18n";
+
 /* eslint-disable max-len */
 export const contactsListItems = [
   {
-    title: "Find a dealer",
+    title: i18n.t("footerContactListFirstItem"),
     url: "https://www.bmw.ua/uk/topics/fascination-bmw/bmw-dealers-service.html",
   },
 
   {
-    title: "Feedback",
+    title: i18n.t("footerContactListSecondItem"),
     url: "https://www.bmw.ua/uk/ssl/contact-request.html",
   },
 
   {
-    title: "Service partnership with BMW",
+    title: i18n.t("footerContactListThirdItem"),
     url: "https://www.bmw.ua/uk/topics/offers-and-services/bmw-service-partnership.html",
   },
 ];

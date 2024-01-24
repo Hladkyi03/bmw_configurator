@@ -1,0 +1,51 @@
+/* eslint-disable max-len */
+const footerTranslations = {
+  en: {
+    translation: {
+      chooseYourCarTitle: "Choose your BMW",
+      chooseYourCarLink: "Vehicles",
+      footerContactsTitle: "Contacts",
+      footerQuickLinksTitle: "Quick links",
+      footerBmwWorldTitle: "BMW World",
+      footerLegalDisclaimer: "Legal disclaimer",
+      footerSourceData: "Source data",
+      footerCookieFiles: "Cookie files",
+      footerContactListFirstItem: "Find a dealer",
+      footerContactListSecondItem: "Feedback",
+      footerContactListThirdItem: "Service partnership with BMW",
+      footerQuickLinksFirstItem: "Schedule a test drive",
+      footerQuickLinksSecondItem: "Service appointment",
+      footerQuickLinksThirdItem: "Price list",
+      footerQuickLinksFourthItem: "Available cars",
+      footerQuickLinksFivethItem: "Mobile application myBMW UA",
+      footerQuickLinksSixthItem: "BMW online store",
+      footerBmwWorldFirstItem: "Charity initiatives by AVT Bavaria during the war",
+      footerBmwWorldSecondItem: "BMW News",
+    },
+  },
+  uk: {
+    translation: {
+      chooseYourCarTitle: "ОБЕРІТЬ СВІЙ BMW",
+      chooseYourCarLink: "Автомобілі",
+      footerContactsTitle: "КОНТАКТИ",
+      footerQuickLinksTitle: "ШВИДКІ ПОСИЛАННЯ  ",
+      footerBmwWorldTitle: "СВІТ BMW",
+      footerLegalDisclaimer: "Юридична обмовка",
+      footerSourceData: "Вихідні данні",
+      footerCookieFiles: "Файли кукі",
+      footerContactListFirstItem: "Знайти дилера",
+      footerContactListSecondItem: "Зворотній звязок",
+      footerContactListThirdItem: "Сервісне партнерство з BMW",
+      footerQuickLinksFirstItem: "Замовити тест-драйв",
+      footerQuickLinksSecondItem: "Запис на сервіс",
+      footerQuickLinksThirdItem: "Прайс-лист",
+      footerQuickLinksFourthItem: "Автомобілі в наявності",
+      footerQuickLinksFivethItem: "Мобільний застосунок myBMW UA",
+      footerQuickLinksSixthItem: "Інтернет-магазин BMW",
+      footerBmwWorldFirstItem: "Благодійність АВТ Баварія під час війни",
+      footerBmwWorldSecondItem: "Новини BMW",
+    },
+  },
+};
+
+export default footerTranslations;

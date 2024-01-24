@@ -80,6 +80,20 @@
     gap: 30px;
   }
 
+  &__topbar-button {
+    background: #007bff;
+    color: rgb(14, 13, 13);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+    &--active {
+      border: 2px solid #26292c;
+    }
+  }
+
   &__topbar-link {
     width: 36px;
     height: 36px;

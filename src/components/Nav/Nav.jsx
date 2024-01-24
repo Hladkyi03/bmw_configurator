@@ -2,9 +2,12 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Nav.scss";
 import cn from "classnames";
+import { useTranslation } from "react-i18next";
 
 export const Nav = ({ setIsOpen }) => {
   const location = useLocation();
+
+  const { t } = useTranslation();
 
   const isHomePage = location.pathname === "/home";
 
@@ -28,7 +31,7 @@ export const Nav = ({ setIsOpen }) => {
                 to="/catalog"
                 onClick={handleOnClick}
               >
-                Vehicles
+                {t("navLinkFirst")}
               </Link>
             </li>
             <li className="nav__item">
@@ -38,7 +41,7 @@ export const Nav = ({ setIsOpen }) => {
                 })}
                 to="/"
               >
-                Electric vehicles
+                {t("navLinkSecond")}
               </Link>
             </li>
             <li className="nav__item">
@@ -48,7 +51,7 @@ export const Nav = ({ setIsOpen }) => {
                 })}
                 to="/"
               >
-                Configurator
+                {t("navLinkThird")}
               </Link>
             </li>
             <li className="nav__item">
@@ -58,7 +61,7 @@ export const Nav = ({ setIsOpen }) => {
                 })}
                 to="/"
               >
-                Purchase
+                {t("navLinkFourth")}
               </Link>
             </li>
             <li className="nav__item">
@@ -68,7 +71,7 @@ export const Nav = ({ setIsOpen }) => {
                 })}
                 to="/"
               >
-                More about BMW
+                {t("navLinkFiveth")}
               </Link>
             </li>
           </ul>

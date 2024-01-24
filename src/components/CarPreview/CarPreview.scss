@@ -7,12 +7,16 @@
     max-width: 100%;
 
     @include onDesktop {
-      width: calc(100vw - 380px);
+      width: calc(100vw - 440px);
       max-width: 100%;
-      height: calc(100vh - 80px);
+      height: calc(100vh - 200px);
       position: sticky;
       left: 0;
       top: 0;
+    }
+
+    @media (min-width: 1200px) {
+      height: calc(100vh - 140px);
     }
   }
 }

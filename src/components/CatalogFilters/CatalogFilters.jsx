@@ -5,9 +5,12 @@ import { bmwSeries } from "../../data/bmwSeries";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import "./CatalogFilters.scss";
 import { getSearchWith } from "../../utils/getSearchWith";
+import { useTranslation } from "react-i18next";
 
 export const CatalogFilters = () => {
   const [searchParams] = useSearchParams();
+
+  const { t } = useTranslation();
 
   const [isSortListOpened, setIsSortListOpened] = useState(false);
 
@@ -36,15 +39,19 @@ export const CatalogFilters = () => {
   return (
     <div className="catalog-filters">
       <div className="container container--max-width-1008">
-        <h2 className="catalog-filters__title">Choose your BMW</h2>
+        <h2 className="catalog-filters__title">{t("catalogFiltersTitle")}</h2>
 
-        <p className="catalog-filters__subtitle">Filter</p>
+        <p className="catalog-filters__subtitle">
+          {t("catalogFiltersSubtitle")}
+        </p>
 
         <div className="catalog-filters__buttons">
           <button className="catalog-filters__button">
             <span className="catalog-filters__cross"></span>
 
-            <Link className="catalog-filters__link">Plug-in hybrid</Link>
+            <Link className="catalog-filters__link">
+              {t("catalogFiltersHybride")}
+            </Link>
           </button>
 
           <button
@@ -54,7 +61,9 @@ export const CatalogFilters = () => {
               className="catalog-filters__cross catalog-filters__cross--active"
             ></span>
 
-            <Link className="catalog-filters__link">Electric</Link>
+            <Link className="catalog-filters__link">
+              {t("catalogFiltersElectric")}
+            </Link>
           </button>
 
           <button className="catalog-filters__button">
@@ -69,7 +78,7 @@ export const CatalogFilters = () => {
         </div>
 
         <p className="catalog-filters__models-count">
-          {`${totalModelsCount} models`}
+          {`${totalModelsCount} ${t("catalogFiltersModels")}`}
         </p>
 
         {!isExtraSmall ? (<ul className="catalog-filters__series">
