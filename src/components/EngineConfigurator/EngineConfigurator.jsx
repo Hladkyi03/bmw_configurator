@@ -1,30 +1,33 @@
 import React, { useContext } from "react";
 import "./EngineConfigurator.scss";
-// import { Link, useSearchParams } from "react-router-dom";
-// import { getSearchWith } from "../../utils/getSearchWith";
+import { Link, useSearchParams } from "react-router-dom";
+import { getSearchWith } from "../../utils/getSearchWith";
 import { useState } from "react";
 import cn from "classnames";
 import {
-  DispatchContext,
   StateContext,
 } from "../CarConfiguratorContext/CarConfigurationContext";
 import { useTranslation } from "react-i18next";
 
 export const EngineConfigurator = ({ setIsOverlayOpen }) => {
-  // const [searchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const { t } = useTranslation();
 
   const carConfig = useContext(StateContext);
-  const dispatch = useContext(DispatchContext);
+  // const dispatch = useContext(DispatchContext);
 
   const { engine, transmission } = carConfig;
 
   const [isDropdownActive, setIsDropdownActive] = useState(false);
 
-  // const handleBtnClick = () => {
-  //   return getSearchWith(searchParams, "category", "tttt").toString();
-  // };
+  const handleBtnClick = (value) => {
+    return getSearchWith(
+      searchParams,
+      "transmission",
+      value.toString()
+    ).toString();
+  };
 
   const handleOpenBtnClick = () => {
     document.body.style.overflow = "hidden";
@@ -35,14 +38,14 @@ export const EngineConfigurator = ({ setIsOverlayOpen }) => {
     setIsDropdownActive((prev) => !prev);
   };
 
-  const handleRadioBtnClick = (currentTransmission) => {
-    const action = {
-      type: "addCarTransmission",
-      payload: { transmission: currentTransmission },
-    };
+  // const handleRadioBtnClick = (currentTransmission) => {
+  //   const action = {
+  //     type: "addCarTransmission",
+  //     payload: { transmission: currentTransmission },
+  //   };
 
-    dispatch(action);
-  };
+  //   dispatch(action);
+  // };
 
   return (
     <div className="engine-configurator">
@@ -77,9 +80,10 @@ export const EngineConfigurator = ({ setIsOverlayOpen }) => {
                   transmission.title === carTransmission.title,
               })}
               key={carTransmission.title}
-              onClick={() => handleRadioBtnClick(carTransmission)}
             >
-              {carTransmission.title}
+              <Link to={{ search: handleBtnClick(carTransmission.title) }}>
+                {carTransmission.title}
+              </Link>
             </button>
           ))}
         </div>

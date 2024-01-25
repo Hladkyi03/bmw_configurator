@@ -1,15 +1,15 @@
-import React, { useContext, useState } from "react";
-import { DispatchContext } from
-  "../CarConfiguratorContext/CarConfigurationContext";
+import React, { useState } from "react";
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
+import { Link, useSearchParams } from "react-router-dom";
+import { getSearchWith } from "../../utils/getSearchWith";
 
 export const EngineInfo = ({
   engine,
   selectedEngine,
   selectedTransmission,
 }) => {
-  const dispatch = useContext(DispatchContext);
+  const [searchParams] = useSearchParams();
 
   const [isDropdownActive, setIsDropdownActive] = useState(false);
 
@@ -24,16 +24,20 @@ export const EngineInfo = ({
     setIsDropdownActive((prev) => !prev);
   };
 
-  const handleRadioBtnClick = (currentEngine, currentTransmission) => {
-    const action = {
-      type: "addCarEngine",
-      payload: {
-        transmission: currentTransmission,
-        engine: currentEngine,
-      },
-    };
+  const handleBtnClick = (engineValue, transmissionValue) => {
+    let newSearchParams = "";
 
-    dispatch(action);
+    newSearchParams = getSearchWith(
+      searchParams,
+      "engine",
+      engineValue.toString()
+    ).toString();
+
+    return getSearchWith(
+      newSearchParams,
+      "transmission",
+      transmissionValue.toString()
+    ).toString();
   };
 
   return (
@@ -49,8 +53,8 @@ export const EngineInfo = ({
 
       <p className="engine-configurator__start-price">
         {`${t("configPageFrom")} ${engine.price + transmission.price} ${t(
-            "configPageCurrency"
-          )}`}
+          "configPageCurrency"
+        )}`}
       </p>
 
       <h4 className="engine-configurator__transmission-title">
@@ -68,9 +72,14 @@ export const EngineInfo = ({
                 selectedEngine.title === engine.title,
             })}
             key={carTransmission.title}
-            onClick={() => handleRadioBtnClick(engine, carTransmission)}
           >
-            {carTransmission.title}
+            <Link
+              to={{
+                search: handleBtnClick(engine.title, carTransmission.title),
+              }}
+            >
+              {carTransmission.title}
+            </Link>
           </button>
         ))}
       </div>

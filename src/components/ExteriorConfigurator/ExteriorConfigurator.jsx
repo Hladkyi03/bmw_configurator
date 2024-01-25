@@ -1,26 +1,22 @@
 import React from "react";
 import { useContext } from "react";
-import { DispatchContext, StateContext } from
+import { StateContext } from
   "../CarConfiguratorContext/CarConfigurationContext";
 import "./ExteriorConfigurator.scss";
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
+import { Link, useSearchParams } from "react-router-dom";
+import { getSearchWith } from "../../utils/getSearchWith";
 
 export const ExteriorConfigurator = ({ availableColors }) => {
-  const carConfig = useContext(StateContext)
-  const dispatch = useContext(DispatchContext);
+  const [searchParams] = useSearchParams();
+
+  const carConfig = useContext(StateContext);
 
   const { t } = useTranslation();
 
-  const handleBtnClick = (clickedColor) => {
-    const action = {
-      type: "addCarColor",
-      payload: {
-        color: clickedColor,
-      }
-    }
-
-    dispatch(action);
+  const handleBtnClick = (value) => {
+    return getSearchWith(searchParams, "color", value.toString()).toString();
   };
 
   const checkColorInList = (colorId, allColors) => {
@@ -55,16 +51,17 @@ export const ExteriorConfigurator = ({ availableColors }) => {
                       "exterior-configurator__list-button--active":
                         carColor.id === carConfig.color.id,
                     })}
-                    onClick={() => handleBtnClick(carColor)}
                   >
-                    <img
-                      src={carColor.imageSrc}
-                      alt="color"
-                      className={cn("exterior-configurator__color-image", {
-                        "exterior-configurator__color-image--active":
-                          carColor.id === carConfig.color.id,
-                      })}
-                    />
+                    <Link to={{ search: handleBtnClick(carColor.id) }}>
+                      <img
+                        src={carColor.imageSrc}
+                        alt="color"
+                        className={cn("exterior-configurator__color-image", {
+                          "exterior-configurator__color-image--active":
+                            carColor.id === carConfig.color.id,
+                        })}
+                      />
+                    </Link>
                   </button>
                 </li>
               ))}

@@ -1,25 +1,21 @@
 import React, { useContext } from "react";
 import './WheelsConfigurator.scss';
-import { DispatchContext, StateContext } from
+import { StateContext } from
   "../CarConfiguratorContext/CarConfigurationContext";
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
+import { Link, useSearchParams } from "react-router-dom";
+import { getSearchWith } from "../../utils/getSearchWith";
 
 export const WheelsConfigurator = ({ wheels }) => {
   const carConfig = useContext(StateContext)
-  const dispatch = useContext(DispatchContext);
+
+  const [searchParams] = useSearchParams();
 
   const { t } = useTranslation();
 
-  const handleBtnClick = (clickedWheels) => {
-    const action = {
-      type: "addCarWheels",
-      payload: {
-        wheels: clickedWheels,
-      }
-    }
-
-    dispatch(action);
+  const handleBtnClick = (value) => {
+    return getSearchWith(searchParams, "wheels", value.toString()).toString();
   };
 
   return (
@@ -40,16 +36,17 @@ export const WheelsConfigurator = ({ wheels }) => {
                   "wheels-configurator__list-button--active":
                     wheel.id === carConfig.wheels.id,
                 })}
-                onClick={() => handleBtnClick(wheel)}
               >
-                <img
-                  src={wheel.imageSrc}
-                  alt="color"
-                  className={cn("wheels-configurator__wheel-image", {
-                    "wheels-configurator__wheel-image--active":
-                      wheel.id === carConfig.wheels.id,
-                  })}
-                />
+                <Link to={{ search: handleBtnClick(wheel.id) }}>
+                  <img
+                    src={wheel.imageSrc}
+                    alt="color"
+                    className={cn("wheels-configurator__wheel-image", {
+                      "wheels-configurator__wheel-image--active":
+                        wheel.id === carConfig.wheels.id,
+                    })}
+                  />
+                </Link>
               </button>
             </li>
           ))}
