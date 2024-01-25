@@ -1,3 +1,4 @@
+import i18next from "i18next";
 import i18n from "../translations/i18n";
 
 /* eslint-disable max-len */
@@ -32,3 +33,12 @@ export const quickLinksListItems = [
     url: "https://shop.bmw.ua/?_gl=1*1p5fj6e*_ga*ODk2NzMxNTA3LjE3MDUzMTE0MDE.*_ga_JBZJ5755L5*MTcwNTQwOTg2Ni42LjEuMTcwNTQxMDM2Ny41NS4wLjA.",
   },
 ];
+
+i18next.on('languageChanged', function() {
+  quickLinksListItems[0].title = i18n.t('footerQuickLinksFirstItem');
+  quickLinksListItems[1].title = i18n.t('footerQuickLinksSecondItem');
+  quickLinksListItems[2].title = i18n.t('footerQuickLinksThirdItem');
+  quickLinksListItems[3].title = i18n.t('footerQuickLinksFirstItem');
+  quickLinksListItems[4].title = i18n.t('footerQuickLinksSecondItem');
+  quickLinksListItems[5].title = i18n.t('footerQuickLinksThirdItem');
+});

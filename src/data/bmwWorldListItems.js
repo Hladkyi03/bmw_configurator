@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+import i18next from "i18next";
 import i18n from "../translations/i18n";
 
 export const bmwWorldListItems = [
@@ -12,4 +13,10 @@ export const bmwWorldListItems = [
     url: "https://www.bmw.ua/uk/topics/fascination-bmw/news.html",
   },
 ];
+
+i18next.on('languageChanged', function() {
+  bmwWorldListItems[0].title = i18n.t('footerBmwWorldFirstItem');
+  bmwWorldListItems[1].title = i18n.t('footerBmwWorldSecondItem');
+});
+
 

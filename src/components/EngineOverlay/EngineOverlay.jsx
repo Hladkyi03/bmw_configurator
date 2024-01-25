@@ -30,7 +30,6 @@ export const EngineOverlay = ({ engineTypes, setIsOverlayOpen }) => {
   }
 
   const handleInputClick = () => {
-    // Якщо інпут вже в фокусі, втратити фокус
     if (isSortListOpened) {
       inputRef.current.blur();
     } else {
