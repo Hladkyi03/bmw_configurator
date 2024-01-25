@@ -4,10 +4,13 @@ import { DispatchContext, StateContext } from
   "../CarConfiguratorContext/CarConfigurationContext";
 import "./ExteriorConfigurator.scss";
 import cn from "classnames";
+import { useTranslation } from "react-i18next";
 
 export const ExteriorConfigurator = ({ availableColors }) => {
   const carConfig = useContext(StateContext)
   const dispatch = useContext(DispatchContext);
+
+  const { t } = useTranslation();
 
   const handleBtnClick = (clickedColor) => {
     const action = {
@@ -26,9 +29,13 @@ export const ExteriorConfigurator = ({ availableColors }) => {
 
   return (
     <div className="exterior-configurator">
-      <h2 className="exterior-configurator__title">Exterior</h2>
+      <h2 className="exterior-configurator__title">
+        {t("configPageExterior")}
+      </h2>
 
-      <h3 className="exterior-configurator__subtitle">Car body color</h3>
+      <h3 className="exterior-configurator__subtitle">
+        {t("configPageCarBodyColor")}
+      </h3>
 
       <div className="exterior-configurator__wrapper">
         {availableColors.map((color) => (
@@ -70,7 +77,7 @@ export const ExteriorConfigurator = ({ availableColors }) => {
                 </p>
 
                 <p className="exterior-configurator__color-price">
-                  {`${carConfig.color.price} грн`}
+                  {`${carConfig.color.price} ${t("configPageCurrency")}`}
                 </p>
               </div>
             )}

@@ -4,11 +4,16 @@ import "./EngineConfigurator.scss";
 // import { getSearchWith } from "../../utils/getSearchWith";
 import { useState } from "react";
 import cn from "classnames";
-import { DispatchContext, StateContext } from
-  "../CarConfiguratorContext/CarConfigurationContext";
+import {
+  DispatchContext,
+  StateContext,
+} from "../CarConfiguratorContext/CarConfigurationContext";
+import { useTranslation } from "react-i18next";
 
 export const EngineConfigurator = ({ setIsOverlayOpen }) => {
   // const [searchParams] = useSearchParams();
+
+  const { t } = useTranslation();
 
   const carConfig = useContext(StateContext);
   const dispatch = useContext(DispatchContext);
@@ -24,7 +29,7 @@ export const EngineConfigurator = ({ setIsOverlayOpen }) => {
   const handleOpenBtnClick = () => {
     document.body.style.overflow = "hidden";
     setIsOverlayOpen(true);
-  }
+  };
 
   const handleDropdownBtnClick = () => {
     setIsDropdownActive((prev) => !prev);
@@ -34,29 +39,29 @@ export const EngineConfigurator = ({ setIsOverlayOpen }) => {
     const action = {
       type: "addCarTransmission",
       payload: { transmission: currentTransmission },
-    }
+    };
 
     dispatch(action);
   };
 
   return (
     <div className="engine-configurator">
-      <h2 className="engine-configurator__title">Двигун</h2>
+      <h2 className="engine-configurator__title">{t("configPageEngine")}</h2>
 
       <div className="engine-configurator__wrapper">
-        <h3 className="engine-configurator__model-name">
-          {engine.title}
-        </h3>
+        <h3 className="engine-configurator__model-name">{engine.title}</h3>
 
-        <p className="engine-configurator__fuel-type">
-          {engine.fuelType}
-        </p>
+        <p className="engine-configurator__fuel-type">{engine.fuelType}</p>
 
         <p className="engine-configurator__start-price">
-          {`Від ${engine.price + transmission.price} грн`}
+          {`${t("configPageFrom")} ${engine.price + transmission.price} ${t(
+            "configPageCurrency"
+          )}`}
         </p>
 
-        <h4 className="engine-configurator__transmission-title">Трансмісія</h4>
+        <h4 className="engine-configurator__transmission-title">
+          {t("configPageTransmission")}
+        </h4>
 
         <p className="engine-configurator__transmission-type">
           {transmission.title}
@@ -83,14 +88,14 @@ export const EngineConfigurator = ({ setIsOverlayOpen }) => {
           className="engine-configurator__button"
           onClick={handleDropdownBtnClick}
         >
-          Трансмісія та Технічні дані
+          {t("configPageTechicalData")}
         </button>
 
         {isDropdownActive && (
           <ul className="engine-configurator__info-list">
             <li className="engine-configurator__info-list-item">
               <p className="engine-configurator__info-list-caption">
-                Fuel type
+                {t("configPageFuelType")}
               </p>
               <p className="engine-configurator__info-list-info">
                 {engine.fuelType}
@@ -99,7 +104,7 @@ export const EngineConfigurator = ({ setIsOverlayOpen }) => {
 
             <li className="engine-configurator__info-list-item">
               <p className="engine-configurator__info-list-caption">
-                Engine power
+                {t("configPageEnginePower")}
               </p>
               <p className="engine-configurator__info-list-info">
                 {`${engine.horsePowers} (h.p.)`}
@@ -108,7 +113,7 @@ export const EngineConfigurator = ({ setIsOverlayOpen }) => {
 
             <li className="engine-configurator__info-list-item">
               <p className="engine-configurator__info-list-caption">
-                Fuel consumption
+                {t("configPageFuelConsumption")}
               </p>
               <p className="engine-configurator__info-list-info">
                 {`${transmission.fuelConsumption}l/ 100km`}
@@ -117,7 +122,7 @@ export const EngineConfigurator = ({ setIsOverlayOpen }) => {
 
             <li className="engine-configurator__info-list-item">
               <p className="engine-configurator__info-list-caption">
-                Transmission
+                {t("configPageTransmission")}
               </p>
               <p className="engine-configurator__info-list-info">
                 {transmission.title}
@@ -126,7 +131,7 @@ export const EngineConfigurator = ({ setIsOverlayOpen }) => {
 
             <li className="engine-configurator__info-list-item">
               <p className="engine-configurator__info-list-caption">
-                Drive unit
+                {t("configPageDriveUnit")}
               </p>
               <p className="engine-configurator__info-list-info">
                 {engine.driveUnit}
@@ -135,7 +140,7 @@ export const EngineConfigurator = ({ setIsOverlayOpen }) => {
 
             <li className="engine-configurator__info-list-item">
               <p className="engine-configurator__info-list-caption">
-                Acceleration
+                {t("configPageAcceleration")}
               </p>
               <p className="engine-configurator__info-list-info">
                 {`${transmission.acceleration} s`}
@@ -144,7 +149,7 @@ export const EngineConfigurator = ({ setIsOverlayOpen }) => {
 
             <li className="engine-configurator__info-list-item">
               <p className="engine-configurator__info-list-caption">
-                Emissions CO2
+                {t("configPageEmissions")}
               </p>
               <p className="engine-configurator__info-list-info">
                 {`${transmission.emissionsCO2} g/km`}
@@ -158,7 +163,7 @@ export const EngineConfigurator = ({ setIsOverlayOpen }) => {
         className="engine-configurator__overlay-button"
         onClick={handleOpenBtnClick}
       >
-        Подивитись всі варіанти виконання
+        {t("configPageEnginesBtn")}
       </button>
     </div>
   );

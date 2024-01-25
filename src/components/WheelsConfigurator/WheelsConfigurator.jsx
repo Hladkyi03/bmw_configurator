@@ -3,10 +3,13 @@ import './WheelsConfigurator.scss';
 import { DispatchContext, StateContext } from
   "../CarConfiguratorContext/CarConfigurationContext";
 import cn from "classnames";
+import { useTranslation } from "react-i18next";
 
 export const WheelsConfigurator = ({ wheels }) => {
   const carConfig = useContext(StateContext)
   const dispatch = useContext(DispatchContext);
+
+  const { t } = useTranslation();
 
   const handleBtnClick = (clickedWheels) => {
     const action = {
@@ -21,7 +24,9 @@ export const WheelsConfigurator = ({ wheels }) => {
 
   return (
     <div className="wheels-configurator">
-      <h3 className="wheels-configurator__title">Wheels</h3>
+      <h3 className="wheels-configurator__title">
+        {t("configPageWheels")}
+      </h3>
 
       <div className="wheels-configurator__wrapper">
         <ul className="wheels-configurator__wheels-list">
@@ -56,7 +61,7 @@ export const WheelsConfigurator = ({ wheels }) => {
           </p>
 
           <p className="wheels-configurator__wheel-price">
-            {`${carConfig.wheels.price} грн`}
+            {`${carConfig.wheels.price} ${t("configPageCurrency")}`}
           </p>
         </div>
 

@@ -8,9 +8,12 @@ import cross from "../../media/icons/cross.svg";
 import { useState } from "react";
 import cn from "classnames";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import { useTranslation } from "react-i18next";
 
 export const EngineOverlay = ({ engineTypes, setIsOverlayOpen }) => {
   const carConfig = useContext(StateContext);
+
+  const { t } = useTranslation();
 
   const fuelTypes = new Set(
     engineTypes.map((engineType) => engineType.fuelType)
@@ -100,7 +103,9 @@ export const EngineOverlay = ({ engineTypes, setIsOverlayOpen }) => {
         </button>
 
         <div className="engine-overlay__aside">
-          <h2 className="engine-overlay__aside-title">CHOICE OF ENGINE</h2>
+          <h2 className="engine-overlay__aside-title">
+            {t("configPageOverlayTitle")}
+          </h2>
 
           {isLarge ? (
             <>

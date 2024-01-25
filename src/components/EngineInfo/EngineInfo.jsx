@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { DispatchContext } from
   "../CarConfiguratorContext/CarConfigurationContext";
 import cn from "classnames";
+import { useTranslation } from "react-i18next";
 
 export const EngineInfo = ({
   engine,
@@ -11,6 +12,8 @@ export const EngineInfo = ({
   const dispatch = useContext(DispatchContext);
 
   const [isDropdownActive, setIsDropdownActive] = useState(false);
+
+  const { t } = useTranslation();
 
   const transmission =
     engine.title === selectedEngine.title
@@ -45,10 +48,14 @@ export const EngineInfo = ({
       <p className="engine-configurator__fuel-type">{engine.fuelType}</p>
 
       <p className="engine-configurator__start-price">
-        {`Від ${engine.price + transmission.price} грн`}
+        {`${t("configPageFrom")} ${engine.price + transmission.price} ${t(
+            "configPageCurrency"
+          )}`}
       </p>
 
-      <h4 className="engine-configurator__transmission-title">Трансмісія</h4>
+      <h4 className="engine-configurator__transmission-title">
+        {t("configPageTransmission")}
+      </h4>
 
       <div className="engine-configurator__buttons-wrapper">
         {engine.transmission.map((carTransmission) => (
@@ -72,13 +79,16 @@ export const EngineInfo = ({
         className="engine-configurator__button"
         onClick={handleDropdownBtnClick}
       >
-        Трансмісія та Технічні дані
+        {t("configPageTechicalData")}
       </button>
 
       {isDropdownActive && (
         <ul className="engine-configurator__info-list">
           <li className="engine-configurator__info-list-item">
-            <p className="engine-configurator__info-list-caption">Fuel type</p>
+            <p className="engine-configurator__info-list-caption">
+              {t("configPageFuelType")}
+            </p>
+
             <p className="engine-configurator__info-list-info">
               {engine.fuelType}
             </p>
@@ -86,7 +96,7 @@ export const EngineInfo = ({
 
           <li className="engine-configurator__info-list-item">
             <p className="engine-configurator__info-list-caption">
-              Engine power
+              {t("configPageEnginePower")}
             </p>
             <p className="engine-configurator__info-list-info">
               {`${engine.horsePowers} (h.p.)`}
@@ -95,7 +105,7 @@ export const EngineInfo = ({
 
           <li className="engine-configurator__info-list-item">
             <p className="engine-configurator__info-list-caption">
-              Fuel consumption
+              {t("configPageFuelConsumption")}
             </p>
             <p className="engine-configurator__info-list-info">
               {`${transmission.fuelConsumption}l/ 100km`}
@@ -104,8 +114,9 @@ export const EngineInfo = ({
 
           <li className="engine-configurator__info-list-item">
             <p className="engine-configurator__info-list-caption">
-              Transmission
+              {t("configPageTransmission")}
             </p>
+
             <p className="engine-configurator__info-list-info">
               {transmission.title}
             </p>
@@ -114,14 +125,15 @@ export const EngineInfo = ({
           <li className="engine-configurator__info-list-item">
             <p className="engine-configurator__info-list-caption">Drive unit</p>
             <p className="engine-configurator__info-list-info">
-              {engine.driveUnit}
+              {t("configPageDriveUnit")}
             </p>
           </li>
 
           <li className="engine-configurator__info-list-item">
             <p className="engine-configurator__info-list-caption">
-              Acceleration
+              {t("configPageAcceleration")}
             </p>
+
             <p className="engine-configurator__info-list-info">
               {`${transmission.acceleration} s`}
             </p>
@@ -129,8 +141,9 @@ export const EngineInfo = ({
 
           <li className="engine-configurator__info-list-item">
             <p className="engine-configurator__info-list-caption">
-              Emissions CO2
+              {t("configPageEmissions")}
             </p>
+
             <p className="engine-configurator__info-list-info">
               {`${transmission.emissionsCO2} g/km`}
             </p>

@@ -6,6 +6,7 @@ import footerTranslations from "./footer";
 import nav from "./nav";
 import catalogFilters from "./catalogFilters";
 import catalogCars from "./catalogCars";
+import configPageTranslations from "./configPage";
 
 const resources = {
   en: {
@@ -15,6 +16,7 @@ const resources = {
       ...nav.en.translation,
       ...catalogFilters.en.translation,
       ...catalogCars.en.translation,
+      ...configPageTranslations.en.translation,
     },
   },
   uk: {
@@ -24,13 +26,14 @@ const resources = {
       ...nav.uk.translation,
       ...catalogFilters.uk.translation,
       ...catalogCars.uk.translation,
+      ...configPageTranslations.uk.translation,
     },
   },
 };
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'uk', // Default language
+  lng: 'en', // Default language
   interpolation: {
     escapeValue: false, // React already escapes values
   },

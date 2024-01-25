@@ -4,9 +4,12 @@ import { StateContext } from
   "../CarConfiguratorContext/CarConfigurationContext";
 import { Button } from "../Button/Button";
 import './TotalPrice.scss';
+import { useTranslation } from "react-i18next";
 
 export const TotalPrice = () => {
   const carConfig = useContext(StateContext);
+
+  const { t } = useTranslation();
 
   const { engine, transmission, color, wheels } = carConfig;
 
@@ -23,18 +26,18 @@ export const TotalPrice = () => {
       <div className="total-price__right-wrapper">
         <div className="total-price__wrapper">
           <p className="total-price__total-price-label">
-            Total sum
+            {t("configPageTotalPrice")}
           </p>
 
           <p className="total-price__total-price">
-            {`${countTotalSum()} uah`}
+            {`${countTotalSum()} ${t("configPageCurrency")}`}
           </p>
         </div>
 
         <div className="total-price__wrapper">
           <Button
             color="blue"
-            text="Go to payment"
+            text={t("configPageTotalPriceBtn")}
             url={`home`}
             modificators={"button--border-radius-0"}
           />

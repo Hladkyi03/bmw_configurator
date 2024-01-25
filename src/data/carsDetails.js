@@ -12,7 +12,7 @@ export const carsDetails = [
         driveUnit: "Front wheel drive",
         transmission: [
           {
-            title: "Механічна коробка передач",
+            title: "Mechanical gearbox",
             price: 32000,
             fuelConsumption: 6.9,
             emissionsCO2: "133 - 109",
@@ -20,7 +20,7 @@ export const carsDetails = [
           },
 
           {
-            title: "7-ступенева трансмісія 'Steptronic' з подвійним зчепленням",
+            title: "7-speed transmission 'Steptronic' with double clutch",
             price: 85000,
             fuelConsumption: 6.8,
             emissionsCO2: "130 - 108",
@@ -37,7 +37,7 @@ export const carsDetails = [
         driveUnit: "Front wheel drive",
         transmission: [
           {
-            title: "Спортивна трансмісія 'Steptronic' з пелюстками перемикання передач на кермі",
+            title: "Sports transmission 'Steptronic' with paddle shifters on the steering wheel",
             price: 0,
             fuelConsumption: 7.4,
             emissionsCO2: "170 - 156",
@@ -54,7 +54,7 @@ export const carsDetails = [
         driveUnit: "Front wheel drive",
         transmission: [
           {
-            title: "Механічна коробка передач",
+            title: "Mechanical gearbox",
             price: 66000,
             fuelConsumption: 6.7,
             emissionsCO2: "150 - 128",
@@ -62,7 +62,7 @@ export const carsDetails = [
           },
 
           {
-            title: "Спортивна трансмісія 'Steptronic' з пелюстками перемикання передач на кермі",
+            title: "Sports transmission 'Steptronic' with paddle shifters on the steering wheel",
             price: 159000,
             fuelConsumption: 6.6,
             emissionsCO2: "151 - 110",
@@ -79,7 +79,7 @@ export const carsDetails = [
         driveUnit: "Front wheel drive",
         transmission: [
           {
-            title: "Механічна коробка передач",
+            title: "Mechanical gearbox",
             price: 86000,
             fuelConsumption: 5.3,
             emissionsCO2: "141 - 121",
@@ -87,7 +87,7 @@ export const carsDetails = [
           },
 
           {
-            title: "Автоматична трансмісія Steptronic",
+            title: "Steptronic automatic transmission",
             price: 187000,
             fuelConsumption: 5.6,
             emissionsCO2: "147 - 126",
@@ -95,7 +95,7 @@ export const carsDetails = [
           },
 
           {
-            title: "Спортивна трансмісія 'Steptronic' з пелюстками перемикання передач на кермі",
+            title: "Sports transmission 'Steptronic' with paddle shifters on the steering wheel",
             price: 195000,
             fuelConsumption: 5.6,
             emissionsCO2: "147 - 125",
@@ -112,7 +112,7 @@ export const carsDetails = [
         driveUnit: "Full wheel drive",
         transmission: [
           {
-            title: "Автоматична трансмісія Steptronic",
+            title: "Steptronic automatic transmission",
             price: 152000,
             fuelConsumption: 5.9,
             emissionsCO2: "149 - 121",
@@ -120,7 +120,7 @@ export const carsDetails = [
           },
 
           {
-            title: "Спортивна трансмісія 'Steptronic' з пелюстками перемикання передач на кермі",
+            title: "Sports transmission 'Steptronic' with paddle shifters on the steering wheel",
             price: 195200,
             fuelConsumption: 6.0,
             emissionsCO2: "148 - 127",
@@ -170,7 +170,7 @@ export const carsDetails = [
     ],
     wheels: [
       {
-        title: `Диски Multi-spoke style 488 Bicolour`,
+        title: `Wheels Multi-spoke style 488 Bicolour`,
         diameter: 18,
         id: "SO1L2",
         imageSrc: "images/wheels/wheels-so1l2.webp",
@@ -178,7 +178,7 @@ export const carsDetails = [
       },
 
       {
-        title: `Диски Multi-spoke style 546 зі спеціальними шинами`,
+        title: `Multi-spoke style 546 rims with special tires`,
         diameter: 17,
         id: "SO1L1",
         imageSrc: "images/wheels/wheels-so1l1.webp",
@@ -186,7 +186,7 @@ export const carsDetails = [
       },
 
       {
-        title: `Диски Double-spoke style 549 Bicolour зі спеціальними шинами`,
+        title: `Double-spoke style 549 Bicolour wheels with special tires`,
         diameter: 17,
         id: "SO1US",
         imageSrc: "images/wheels/wheels-so1us.webp",
@@ -207,7 +207,7 @@ export const carsDetails = [
         driveUnit: "Front wheel drive",
         transmission: [
           {
-            title: "Механічна коробка передач",
+            title: "Mechanical gearbox",
             price: 47000,
             fuelConsumption: 9.5,
             emissionsCO2: "151 - 129",
@@ -215,7 +215,7 @@ export const carsDetails = [
           },
 
           {
-            title: "7-ступенева трансмісія 'Steptronic' з подвійним зчепленням",
+            title: "7-speed transmission 'Steptronic' with double clutch",
             price: 115000,
             fuelConsumption: 9.6,
             emissionsCO2: "154 - 132",
@@ -232,7 +232,7 @@ export const carsDetails = [
         driveUnit: "Front wheel drive",
         transmission: [
           {
-            title: "Спортивна трансмісія 'Steptronic' з пелюстками перемикання передач на кермі",
+            title: "Sports transmission 'Steptronic' with paddle shifters on the steering wheel",
             price: 0,
             fuelConsumption: 7.4,
             emissionsCO2: "170 - 156",
@@ -249,7 +249,7 @@ export const carsDetails = [
         driveUnit: "Front wheel drive",
         transmission: [
           {
-            title: "Механічна коробка передач",
+            title: "Mechanical gearbox",
             price: 66000,
             fuelConsumption: 6.7,
             emissionsCO2: "150 - 128",
@@ -257,7 +257,7 @@ export const carsDetails = [
           },
 
           {
-            title: "Спортивна трансмісія 'Steptronic' з пелюстками перемикання передач на кермі",
+            title: "Sports transmission 'Steptronic' with paddle shifters on the steering wheel",
             price: 159000,
             fuelConsumption: 6.6,
             emissionsCO2: "151 - 110",
@@ -274,7 +274,7 @@ export const carsDetails = [
         driveUnit: "Front wheel drive",
         transmission: [
           {
-            title: "Механічна коробка передач",
+            title: "Mechanical gearbox",
             price: 86000,
             fuelConsumption: 5.3,
             emissionsCO2: "141 - 121",
@@ -282,7 +282,7 @@ export const carsDetails = [
           },
 
           {
-            title: "Автоматична трансмісія Steptronic",
+            title: "Steptronic automatic transmission",
             price: 187000,
             fuelConsumption: 5.6,
             emissionsCO2: "147 - 126",
@@ -290,7 +290,7 @@ export const carsDetails = [
           },
 
           {
-            title: "Спортивна трансмісія 'Steptronic' з пелюстками перемикання передач на кермі",
+            title: "Sports transmission 'Steptronic' with paddle shifters on the steering wheel",
             price: 195000,
             fuelConsumption: 5.6,
             emissionsCO2: "147 - 125",
@@ -307,7 +307,7 @@ export const carsDetails = [
         driveUnit: "Full wheel drive",
         transmission: [
           {
-            title: "Автоматична трансмісія Steptronic",
+            title: "Steptronic automatic transmission",
             price: 152000,
             fuelConsumption: 5.9,
             emissionsCO2: "149 - 121",
@@ -315,7 +315,7 @@ export const carsDetails = [
           },
 
           {
-            title: "Спортивна трансмісія 'Steptronic' з пелюстками перемикання передач на кермі",
+            title: "Sports transmission 'Steptronic' with paddle shifters on the steering wheel",
             price: 195200,
             fuelConsumption: 6.0,
             emissionsCO2: "148 - 127",
@@ -365,7 +365,7 @@ export const carsDetails = [
     ],
     wheels: [
       {
-        title: `M легкосплавні диски V-spoke 557 M Bicolour зі спортивними шинами`,
+        title: `M light-alloy wheels V-spoke 557 M Bicolour with sports tires`,
         diameter: 19,
         id: "SO1EY",
         imageSrc: "images/wheels/wheels-so1ey.webp",
@@ -373,7 +373,7 @@ export const carsDetails = [
       },
 
       {
-        title: `M Диски V-spoke style 554 M зі спеціальними шинами`,
+        title: `M V-spoke style 554 M rims with special tires`,
         diameter: 18,
         id: "SO1Y0",
         imageSrc: "images/wheels/wheels-so1y0.webp",
@@ -381,7 +381,7 @@ export const carsDetails = [
       },
 
       {
-        title: `M легкосплавні диски Double spoke 552 M Bicolour зі спортивними шинами`,
+        title: `M light-alloy wheels Double spoke 552 M Bicolour with sports tires`,
         diameter: 19,
         id: "SO1EX",
         imageSrc: "images/wheels/wheels-so1ex.webp",
@@ -402,7 +402,7 @@ export const carsDetails = [
         driveUnit: "Front wheel drive",
         transmission: [
           {
-            title: "Механічна коробка передач",
+            title: "Mechanical gearbox",
             price: 70000,
             fuelConsumption: 6.6,
             emissionsCO2: "140 - 119",
@@ -410,7 +410,7 @@ export const carsDetails = [
           },
 
           {
-            title: "7-ступенева трансмісія 'Steptronic' з подвійним зчепленням",
+            title: "7-speed transmission 'Steptronic' with double clutch",
             price: 120000,
             fuelConsumption: 6.5,
             emissionsCO2: "145 - 125",
@@ -427,7 +427,7 @@ export const carsDetails = [
         driveUnit: "Full wheel drive",
         transmission: [
           {
-            title: "Спортивна трансмісія 'Steptronic' з пелюстками перемикання передач на кермі",
+            title: "Sports transmission 'Steptronic' with paddle shifters on the steering wheel",
             price: 0,
             fuelConsumption: 8.4,
             emissionsCO2: "170 - 156",
@@ -444,7 +444,7 @@ export const carsDetails = [
         driveUnit: "Front wheel drive",
         transmission: [
           {
-            title: "Механічна коробка передач",
+            title: "Mechanical gearbox",
             price: 67000,
             fuelConsumption: 5.4,
             emissionsCO2: "143 - 122",
@@ -452,7 +452,7 @@ export const carsDetails = [
           },
 
           {
-            title: "Автоматична трансмісія Steptronic",
+            title: "Steptronic automatic transmission",
             price: 149000,
             fuelConsumption: 5.2,
             emissionsCO2: "140 - 120",
@@ -460,7 +460,7 @@ export const carsDetails = [
           },
 
           {
-            title: "Спортивна трансмісія 'Steptronic' з пелюстками перемикання передач на кермі",
+            title: "Sports transmission 'Steptronic' with paddle shifters on the steering wheel",
             price: 189000,
             fuelConsumption: 5.3,
             emissionsCO2: "143 - 115",
@@ -477,7 +477,7 @@ export const carsDetails = [
         driveUnit: "Full wheel drive",
         transmission: [
           {
-            title: "Автоматична трансмісія Steptronic",
+            title: "Steptronic automatic transmission",
             price: 95000,
             fuelConsumption: 6.0,
             emissionsCO2: "158 - 130",
@@ -485,7 +485,7 @@ export const carsDetails = [
           },
 
           {
-            title: "Спортивна трансмісія 'Steptronic' з пелюстками перемикання передач на кермі",
+            title: "Sports transmission 'Steptronic' with paddle shifters on the steering wheel",
             price: 116000,
             fuelConsumption: 6.2,
             emissionsCO2: "160 - 133",
