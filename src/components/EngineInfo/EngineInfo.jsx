@@ -3,6 +3,7 @@ import cn from "classnames";
 import { useTranslation } from "react-i18next";
 import { Link, useSearchParams } from "react-router-dom";
 import { getSearchWith } from "../../utils/getSearchWith";
+import { getFormatedNumber } from "../../utils/getFormatedNumber";
 
 export const EngineInfo = ({
   engine,
@@ -52,7 +53,7 @@ export const EngineInfo = ({
       <p className="engine-configurator__fuel-type">{engine.fuelType}</p>
 
       <p className="engine-configurator__start-price">
-        {`${t("configPageFrom")} ${engine.price + transmission.price} ${t(
+        {`${t("configPageFrom")} ${getFormatedNumber(engine.price + transmission.price)} ${t(
           "configPageCurrency"
         )}`}
       </p>
@@ -66,14 +67,15 @@ export const EngineInfo = ({
           <button
             type="radio"
             name="car-transmission"
-            className={cn("engine-configurator__radio-button", {
-              "engine-configurator__radio-button--active":
-                transmission.title === carTransmission.title &&
-                selectedEngine.title === engine.title,
-            })}
+            className="engine-configurator__radio-button"
             key={carTransmission.title}
           >
             <Link
+              className={cn("engine-configurator__button-link", {
+                "engine-configurator__button-link--active":
+                  transmission.title === carTransmission.title &&
+                  selectedEngine.title === engine.title,
+              })}
               to={{
                 search: handleBtnClick(engine.title, carTransmission.title),
               }}

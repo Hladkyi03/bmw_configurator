@@ -7,6 +7,7 @@ import cn from "classnames";
 import { useTranslation } from "react-i18next";
 import { Link, useSearchParams } from "react-router-dom";
 import { getSearchWith } from "../../utils/getSearchWith";
+import { getFormatedNumber } from "../../utils/getFormatedNumber";
 
 export const ExteriorConfigurator = ({ availableColors }) => {
   const [searchParams] = useSearchParams();
@@ -74,7 +75,7 @@ export const ExteriorConfigurator = ({ availableColors }) => {
                 </p>
 
                 <p className="exterior-configurator__color-price">
-                  {`${carConfig.color.price} ${t("configPageCurrency")}`}
+                  {`${getFormatedNumber(carConfig.color.price)} ${t("configPageCurrency")}`}
                 </p>
               </div>
             )}

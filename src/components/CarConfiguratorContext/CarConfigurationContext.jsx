@@ -22,35 +22,6 @@ export const GlobalStateProvider = ({ children }) => {
         };
       }
 
-      case 'addCarEngine': {
-        return {
-          ...state,
-          engine: action.payload.engine,
-          transmission: action.payload.transmission,
-        };
-      }
-
-      case 'addCarTransmission': {
-        return {
-          ...state,
-          transmission: action.payload.transmission,
-        };
-      }
-
-      case 'addCarColor': {
-        return {
-          ...state,
-          color: action.payload.color,
-        };
-      }
-
-      case 'addCarWheels': {
-        return {
-          ...state,
-          wheels: action.payload.wheels,
-        };
-      }
-
       default:
         return state;
     }

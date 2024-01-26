@@ -1,18 +1,23 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "../Button/Button";
 import "./PageNotFound.scss";
 
-export const PageNotFound = () => (
-  <div className="page-not-found">
-    <div className="container">
-      <p className="page-not-found__title">Page not found</p>
+export const PageNotFound = () => {
+  const { t } = useTranslation();
 
-      <Button
-        color="white"
-        text="Back to home page"
-        url="home"
-        modificators={"button--margin-top-32"}
-      />
+  return (
+    <div className="page-not-found">
+      <div className="container">
+        <p className="page-not-found__title">{t("pageNotFoundTitle")}</p>
+
+        <Button
+          color="white"
+          text={t("pageNotFoundButtonTitle")}
+          url="home"
+          modificators={"button--margin-top-32"}
+        />
+      </div>
     </div>
-  </div>
-)
+  );
+};

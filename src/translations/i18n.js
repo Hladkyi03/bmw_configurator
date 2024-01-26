@@ -7,6 +7,7 @@ import nav from "./nav";
 import catalogFilters from "./catalogFilters";
 import catalogCars from "./catalogCars";
 import configPageTranslations from "./configPage";
+import notFoundTranslations from "./notFound";
 
 const resources = {
   en: {
@@ -17,6 +18,7 @@ const resources = {
       ...catalogFilters.en.translation,
       ...catalogCars.en.translation,
       ...configPageTranslations.en.translation,
+      ...notFoundTranslations.en.translation,
     },
   },
   uk: {
@@ -27,6 +29,7 @@ const resources = {
       ...catalogFilters.uk.translation,
       ...catalogCars.uk.translation,
       ...configPageTranslations.uk.translation,
+      ...notFoundTranslations.uk.translation,
     },
   },
 };

@@ -6,6 +6,7 @@ import cn from "classnames";
 import { useTranslation } from "react-i18next";
 import { Link, useSearchParams } from "react-router-dom";
 import { getSearchWith } from "../../utils/getSearchWith";
+import { getFormatedNumber } from "../../utils/getFormatedNumber";
 
 export const WheelsConfigurator = ({ wheels }) => {
   const carConfig = useContext(StateContext)
@@ -58,7 +59,7 @@ export const WheelsConfigurator = ({ wheels }) => {
           </p>
 
           <p className="wheels-configurator__wheel-price">
-            {`${carConfig.wheels.price} ${t("configPageCurrency")}`}
+            {`${getFormatedNumber(carConfig.wheels.price)} ${t("configPageCurrency")}`}
           </p>
         </div>
 

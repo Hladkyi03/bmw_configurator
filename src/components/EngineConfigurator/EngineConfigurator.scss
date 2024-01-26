@@ -60,15 +60,37 @@
   }
 
   &__radio-button {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     background: transparent;
     margin: 0;
     font-family: inherit;
     font-weight: 400;
     cursor: pointer;
     text-align: left;
+
+    // &::before {
+    //   content: "";
+    //   display: block;
+    //   width: 24px;
+    //   min-width: 24px;
+    //   height: 24px;
+    //   align-self: start;
+    //   border-radius: 50%;
+    //   border: 2px solid #bbb;
+    //   box-sizing: border-box;
+    // }
+
+    // &--active {
+    //   &::before {
+    //     border: 8px solid #4d4d4d;
+    //   }
+    // }
+  }
+
+  &__button-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
     &::before {
       content: "";

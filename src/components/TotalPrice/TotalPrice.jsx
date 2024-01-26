@@ -5,6 +5,7 @@ import { StateContext } from
 import { Button } from "../Button/Button";
 import './TotalPrice.scss';
 import { useTranslation } from "react-i18next";
+import { getFormatedNumber } from "../../utils/getFormatedNumber";
 
 export const TotalPrice = () => {
   const carConfig = useContext(StateContext);
@@ -30,7 +31,7 @@ export const TotalPrice = () => {
           </p>
 
           <p className="total-price__total-price">
-            {`${countTotalSum()} ${t("configPageCurrency")}`}
+            {`${getFormatedNumber(countTotalSum())} ${t("configPageCurrency")}`}
           </p>
         </div>
 
