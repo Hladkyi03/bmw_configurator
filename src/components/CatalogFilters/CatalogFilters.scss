@@ -1,16 +1,18 @@
+@import "../../cssTools/utils.scss";
+
 .catalog-filters {
   padding-top: 50px;
 
   &__title {
     font-size: 32px;
-    color: #262626;
+    color: $extra-dark;
     font-weight: 600;
   }
 
   &__subtitle {
     margin-top: 24px;
     font-size: 20px;
-    color: #262626;
+    color: $extra-dark;
     font-weight: 300;
   }
 
@@ -26,7 +28,7 @@
     display: block;
     width: 15px;
     height: 1.5px;
-    background-color: #666;
+    background-color: $dark-gray;
     position: relative;
     transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 
@@ -34,7 +36,7 @@
       content: "";
       display: block;
       position: absolute;
-      background-color: #666;
+      background-color: $dark-gray;
       left: 50%;
       top: -7px;
       width: 2px;
@@ -45,10 +47,10 @@
 
     &--active {
       transform: rotate(45deg);
-      background-color: #f6f6f6;
+      background-color: $light-white;
 
       &::before {
-        background-color: #f6f6f6;
+        background-color: $light-white;
       }
     }
   }
@@ -56,8 +58,8 @@
   &__button {
     display: block;
     background: transparent;
-    box-shadow: inset 0 0 0 1px #bbb;
-    color: #666;
+    box-shadow: inset 0 0 0 1px $medium-gray;
+    color: $dark-gray;
     font-weight: 700;
     padding-inline: 16px;
     height: 36px;
@@ -69,17 +71,17 @@
     transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
     &:hover {
-      box-shadow: inset 0 0 0 1px #262626;
-      color: #262626;
+      box-shadow: inset 0 0 0 1px $extra-dark;
+      color: $extra-dark;
     }
 
     &--active {
-      background-color: #4d4d4d;
-      color: #f6f6f6;
+      background-color: $medium-dark;
+      color: $light-white;
 
       &:hover {
-        background-color: #262626;
-        color: #f6f6f6;
+        background-color: $extra-dark;
+        color: $light-white;
         box-shadow: none;
       }
     }
@@ -97,7 +99,7 @@
     align-items: center;
     backdrop-filter: blur(10px);
     background: #ffffffbf;
-    border-bottom: 0.0625rem solid #e6e6e6;
+    border-bottom: 0.0625rem solid $light-gray;
     position: sticky;
     z-index: 3;
     height: 65px;
@@ -116,7 +118,7 @@
     height: 64px;
     transition: color 0.2s ease-in-out;
     position: relative;
-    color: #666;
+    color: $dark-gray;
     font-weight: 600;
 
     &::before {
@@ -130,18 +132,18 @@
     }
 
     &:hover {
-      color: #262626;
+      color: $extra-dark;
 
       &::before {
-        background-color: #4d4d4d;
+        background-color: $medium-dark;
       }
     }
 
     &--active {
-      color: #262626;
+      color: $extra-dark;
 
       &::before {
-        background-color: #4d4d4d;
+        background-color: $medium-dark;
       }
     }
 
@@ -164,7 +166,7 @@
     margin-top: 4px;
     width: 176px;
     height: 40px;
-    border: 1px solid #e6e6e6;
+    border: 1px solid $light-gray;
     background-color: transparent;
     outline: 0;
     padding-inline: 12px;
@@ -185,8 +187,8 @@
     display: flex;
     flex-direction: column;
     top: 60px;
-    border: 1px solid #e6e6e6;
-    background: #e6e6e6;
+    border: 1px solid $light-gray;
+    background: $light-gray;
     box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05);
     width: 100%;
     padding: 8px 0;

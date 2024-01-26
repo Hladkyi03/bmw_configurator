@@ -1,9 +1,11 @@
+@import "../../cssTools/utils.scss";
+
 .wheels-configurator {
   padding: 20px;
 
   &__title {
     font-size: 20px;
-    color: #262626;
+    color: $extra-dark;
     text-transform: uppercase;
     font-weight: 400;
   }
@@ -11,7 +13,7 @@
   &__wrapper {
     margin-top: 20px;
     padding: 20px;
-    background-color: #f6f6f6;
+    background-color: $light-white;
   }
 
   &__wheels-list {
@@ -35,7 +37,7 @@
         right: 0;
         width: 24px;
         height: 24px;
-        background-color: #4d4d4d;
+        background-color: $medium-dark;
         border-radius: 50%;
         position: absolute;
         z-index: 1;
@@ -53,7 +55,7 @@
     position: relative;
 
     &--active {
-      border-color: #4d4d4d;
+      border-color: $medium-dark;
     }
   }
 
@@ -62,7 +64,7 @@
   }
 
   &__wheel-title {
-    color: #262626;
+    color: $extra-dark;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
@@ -71,7 +73,7 @@
   &__wheel-price {
     margin-top: 10px;
     font-size: 14px;
-    color: #262626;
+    color: $extra-dark;
     font-weight: 400;
   }
 }

@@ -1,10 +1,12 @@
+@import "../../cssTools/utils.scss";
+
 .exterior-configurator {
   padding: 20px;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid $light-gray;
 
   &__title {
     font-size: 20px;
-    color: #262626;
+    color: $extra-dark;
     text-transform: uppercase;
     font-weight: 400;
   }
@@ -12,7 +14,7 @@
   &__subtitle {
     margin-top: 24px;
     font-size: 14px;
-    color: #666;
+    color: $dark-gray;
     font-weight: 400;
     text-transform: uppercase;
   }
@@ -20,12 +22,12 @@
   &__wrapper {
     margin-top: 20px;
     padding: 20px;
-    background-color: #f6f6f6;
+    background-color: $light-white;
   }
 
   &__category {
     padding-bottom: 24px;
-    color: #262626;
+    color: $extra-dark;
     font-size: 10px;
     font-weight: 400;
     text-transform: uppercase;
@@ -35,7 +37,7 @@
     font-size: 10px;
     font-weight: 400;
     text-transform: uppercase;
-    color: #262626;
+    color: $extra-dark;
     letter-spacing: 2px;
   }
 
@@ -60,7 +62,7 @@
         right: 0;
         width: 24px;
         height: 24px;
-        background-color: #4d4d4d;
+        background-color: $medium-dark;
         border-radius: 50%;
         position: absolute;
         z-index: 1;
@@ -78,7 +80,7 @@
     position: relative;
 
     &--active {
-      border-color: #4d4d4d;
+      border-color: $medium-dark;
     }
   }
 
@@ -87,7 +89,7 @@
   }
 
   &__color-title {
-    color: #262626;
+    color: $extra-dark;
     font-size: 16px;
     font-weight: 400;
   }
@@ -95,7 +97,7 @@
   &__color-price {
     margin-top: 10px;
     font-size: 14px;
-    color: #262626;
+    color: $extra-dark;
     font-weight: 400;
   }
 }

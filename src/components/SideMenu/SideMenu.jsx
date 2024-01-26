@@ -37,7 +37,7 @@ export const SideMenu = ({ isOpen, setIsOpen }) => {
                 width="20"
                 height="20"
                 viewBox="0 0 50 50"
-                fill="#666"
+                fill="$dark-gray"
               >
                 <path
                   d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438

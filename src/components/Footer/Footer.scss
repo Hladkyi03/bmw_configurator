@@ -1,11 +1,11 @@
-@import "../../cssTools/mixins.scss";
+@import "../../cssTools/utils.scss";
 
 .footer {
   padding: 0 0 20px;
 
   &__content-wrapper {
     padding-top: 60px;
-    background-color: #f6f6f6;
+    background-color: $light-white;
     padding-bottom: 40px;
   }
 

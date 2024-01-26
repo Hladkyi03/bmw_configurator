@@ -1,7 +1,9 @@
+@import "../../cssTools/utils.scss";
+
 .catalog {
   &__serie {
     padding: 40px 0 60px;
-    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 1px solid $light-gray;
   }
 
   &__serie-title {

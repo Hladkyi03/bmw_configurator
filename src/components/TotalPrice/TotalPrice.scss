@@ -1,4 +1,4 @@
-@import "../../cssTools/mixins.scss";
+@import "../../cssTools/utils.scss";
 
 .total-price {
   position: sticky;
@@ -13,8 +13,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
+  border-top: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
 
   @include onDesktop {
     padding: 14px 48px;
@@ -25,7 +25,7 @@
   &__model-name {
     font-size: 20px;
     font-weight: 400;
-    color: #262626;
+    color: $extra-dark;
     display: none;
     text-align: left;
     width: 50%;
@@ -64,7 +64,7 @@
 
   &__total-price-label {
     font-size: 12px;
-    color: #262626;
+    color: $extra-dark;
     text-transform: uppercase;
     font-weight: 400;
     display: none;
@@ -78,7 +78,7 @@
     margin-top: 0;
     font-size: 16px;
     font-weight: 700;
-    color: #262626;
+    color: $extra-dark;
 
     @include onDesktop {
       margin-top: 5px;

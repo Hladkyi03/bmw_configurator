@@ -1,4 +1,4 @@
-@import "../../cssTools/mixins.scss";
+@import "../../cssTools/utils.scss";
 
 .header {
   padding-top: 20px;
@@ -61,7 +61,7 @@
       margin-inline: 0;
 
       @include onDesktop {
-        border-bottom: 1px solid #bbb;
+        border-bottom: 1px solid $medium-gray;
         margin-inline: 36px;
       }
     }
