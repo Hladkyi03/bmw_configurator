@@ -27,6 +27,10 @@ export const ConfigPage = () => {
   const selectedCar = carsDetails.find((car) => car.id === +id);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (!selectedCar) {
       return;
     }
