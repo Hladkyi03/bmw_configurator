@@ -43,6 +43,7 @@
 
   &__colors-list {
     display: flex;
+    flex-wrap: wrap;
     gap: 24px;
     margin-top: 16px;
   }

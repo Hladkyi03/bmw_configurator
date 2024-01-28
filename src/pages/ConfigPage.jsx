@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useLocation, useParams, useSearchParams } from "react-router-dom";
 import {
   DispatchContext,
   StateContext,
@@ -19,11 +19,26 @@ import { CarNotFound } from "../components/CarNotFound/CarNotFound";
 
 export const ConfigPage = () => {
   const { id } = useParams();
+  const location = useLocation();
   const [searchParams] = useSearchParams();
 
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
 
   const selectedCar = carsDetails.find((car) => car.id === +id);
+
+  useEffect(() => {
+    if (!selectedCar) {
+      return;
+    }
+
+    if(!sessionStorage.getItem('isCurrentConfig')) {
+      sessionStorage.setItem('isCurrentConfig', true);
+    }
+
+    const fullUrl = `${location.pathname}${location.search}`;
+
+    localStorage.setItem("previousConfigUrl", fullUrl);
+  }, [location]);
 
   const state = useContext(StateContext);
   const dispatch = useContext(DispatchContext);
